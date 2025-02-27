@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="id-ID">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Freelance - Creative Career Blog</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+
+      header {
+        background: linear-gradient(
+          135deg,
+          #00d084,
+          #00bfae
+        ); /* Hijau segar dan cerah */
+        color: white;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 2.5em;
+      }
+
+      nav {
+        background: #00bfae; /* Hijau cerah */
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        flex-wrap: wrap;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 1em;
+      }
+
+      nav a:hover {
+        text-decoration: underline;
+      }
+
+      nav .dropdown {
+        position: relative;
+      }
+
+      nav .dropdown-menu {
+        display: none;
+        position: absolute;
+        background-color: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+      }
+
+      nav .dropdown-menu a {
+        color: #00d084;
+        padding: 10px 20px;
+        display: block;
+        text-decoration: none;
+      }
+
+      nav .dropdown-menu a:hover {
+        background-color: #f4f4f9;
+      }
+
+      nav .dropdown:hover .dropdown-menu {
+        display: block;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .container h2 {
+        color: #00d084; /* Hijau segar untuk judul */
+        border-bottom: 2px solid #00d084;
+        padding-bottom: 5px;
+      }
+
+      .container p {
+        line-height: 1.6;
+        margin: 10px 0;
+      }
+
+      .services ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .services li {
+        background-color: #00d084; /* Hijau cerah untuk layanan */
+        color: white;
+        padding: 10px;
+        margin: 5px 0;
+        border-radius: 5px;
+      }
+
+      .services li strong {
+        font-size: 1.1em;
+      }
+
+      footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 20px;
+      }
+
+      footer p {
+        margin: 0;
+        font-size: 0.9em;
+      }
+
+      @media (max-width: 600px) {
+        nav a {
+          margin: 0 10px;
+          font-size: 0.9em;
+        }
+
+        header h1 {
+          font-size: 2em;
+        }
+
+        .container {
+          padding: 15px;
+        }
+
+        p {
+          text-align: justify;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Creative Career Blog - Freelance</h1>
+    </header>
+    <nav>
+      >
+      <a href="index.html">Home</a>
+      <a href="TENTANG_SAYA.html">About Me</a>
+      <div class="dropdown">
+        <a href="#">My Service ▼</a>
+        <div class="dropdown-menu">
+          <a href="FREELANCE.html">Fiver</a>
+          <a href="FREELANCE_2.html">Lynk</a>
+          <a href="YOUTUBE.html">YouTube</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#">My Favorite ▼</a>
+        <div class="dropdown-menu">
+          <a href="ANIME.html">Anime</a>
+          <a href="MANGA.html">Manga</a>
+          <a href="GAMES.html">Games</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#">My Coding Task ▼</a>
+        <div class="dropdown-menu">
+          <a href="C++.html">C++</a>
+          <a href="CSS.html">CSS</a>
+          <a href="C_SHARP.html">C#</a>
+          <a href="PYTHON.html">Python</a>
+          <a href="HTML.html">Html</a>
+          <a href="PHP.html">PHP</a>
+          <a href="JAVA.html">Java</a>
+          <a href="JAVASCRIPT.html">Javascript</a>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <h2>Layanan Fiver Saya</h2>
+      <p style="text-align: justify">
+        Sebagai seorang ilustrator dan kreator konten, saya menawarkan berbagai
+        layanan freelance untuk memenuhi kebutuhan kreatif Anda. Jika Anda
+        membutuhkan karya seni atau desain karakter yang unik, Anda dapat
+        memanfaatkan layanan freelance saya. Berikut adalah layanan yang saya
+        tawarkan:
+      </p>
+      <div class="services">
+        <h3>Layanan yang Tersedia</h3>
+        <ul>
+          <li>
+            <strong>Ilustrasi Karakter Anime:</strong> Saya menyediakan layanan
+            untuk membuat ilustrasi karakter anime sesuai dengan keinginan Anda,
+            baik untuk kebutuhan pribadi, proyek kreatif, atau komersial.
+          </li>
+          <li>
+            <strong>Komisi Karakter Original:</strong> Anda dapat memesan desain
+            karakter original yang unik dan sesuai dengan konsep atau tema yang
+            Anda inginkan. Setiap karya akan dibuat dengan perhatian khusus
+            untuk detail dan karakteristik yang Anda sukai.
+          </li>
+          <li>
+            <strong>Ilustrasi Digital dan Artwork:</strong> Membuat gambar
+            digital dalam berbagai gaya dan format, baik itu untuk keperluan
+            pribadi, promosi, atau bisnis.
+          </li>
+        </ul>
+      </div>
+      <p style="text-align: justify">
+        Untuk memulai, Anda dapat menghubungi saya melalui halaman kontak atau
+        langsung pesan melalui platform saya di
+        <a href="https://www.fiverr.com/ikyy_skecth" target="_blank">Fiverr</a>.
+        Saya siap membantu Anda dengan proyek kreatif Anda!
+      </p>
+    </div>
+    <footer>
+      <p>&copy; 2025 Creative Career Blog. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>

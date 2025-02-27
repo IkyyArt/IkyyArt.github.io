@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Java Tasks</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5; /* Light grey background */
+        color: #333;
+      }
+
+      header {
+        background: linear-gradient(
+          135deg,
+          #00aaff,
+          #ff7f00
+        ); /* Blue to Orange gradient (Java theme) */
+        color: white;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 2.5em;
+      }
+
+      nav {
+        background: #00aaff; /* Blue */
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        flex-wrap: wrap;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 1em;
+      }
+
+      nav a:hover {
+        text-decoration: underline;
+      }
+
+      nav .dropdown {
+        position: relative;
+      }
+
+      nav .dropdown-menu {
+        display: none;
+        position: absolute;
+        background-color: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+      }
+
+      nav .dropdown-menu a {
+        color: #00aaff;
+        padding: 10px 20px;
+        display: block;
+        text-decoration: none;
+      }
+
+      nav .dropdown-menu a:hover {
+        background-color: #f4f4f9;
+      }
+
+      nav .dropdown:hover .dropdown-menu {
+        display: block;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .container h2 {
+        color: #00aaff; /* Blue */
+        border-bottom: 2px solid #00aaff;
+        padding-bottom: 5px;
+      }
+
+      .container p {
+        line-height: 1.6;
+        margin: 10px 0;
+      }
+
+      footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 20px;
+      }
+
+      footer p {
+        margin: 0;
+        font-size: 0.9em;
+      }
+
+      @media (max-width: 600px) {
+        nav a {
+          margin: 0 10px;
+          font-size: 0.9em;
+        }
+
+        header h1 {
+          font-size: 2em;
+        }
+
+        .container {
+          padding: 15px;
+        }
+
+        p {
+          text-align: justify;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Java Tasks</h1>
+    </header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="TENTANG_SAYA.html">About Me</a>
+      <div class="dropdown">
+        <a href="#">My Service ▼</a>
+        <div class="dropdown-menu">
+          <a href="FREELANCE.html">Fiver</a>
+          <a href="FREELANCE_2.html">Lynk</a>
+          <a href="YOUTUBE.html">YouTube</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#">My Favorite ▼</a>
+        <div class="dropdown-menu">
+          <a href="ANIME.html">Anime</a>
+          <a href="MANGA.html">Manga</a>
+          <a href="GAMES.html">Games</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#">My Coding Task ▼</a>
+        <div class="dropdown-menu">
+          <a href="C++.html">C++</a>
+          <a href="CSS.html">CSS</a>
+          <a href="C_SHARP.html">C#</a>
+          <a href="PYTHON.html">Python</a>
+          <a href="HTML.html">Html</a>
+          <a href="PHP.html">PHP</a>
+          <a href="JAVA.html">Java</a>
+          <a href="JAVASCRIPT.html">Javascript</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#">Java ▼</a>
+        <div class="dropdown-menu">
+          <a href="#">Tugas Java</a>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <h2>Welcome to Java Tasks</h2>
+      <p style="text-align: justify">
+        Selamat datang di halaman tugas Java. Di sini, Anda dapat menemukan
+        berbagai macam tugas yang berhubungan dengan bahasa pemrograman Java.
+        Java adalah bahasa pemrograman yang populer dan banyak digunakan dalam
+        pengembangan aplikasi web, aplikasi seluler, dan aplikasi desktop.
+      </p>
+      <p style="text-align: justify">
+        Pada halaman ini, Anda dapat mengakses tugas-tugas yang dibagi ke dalam
+        kategori tertentu:
+      </p>
+      <ul>
+        <li style="text-align: justify">
+          <strong>Tugas Individu dan Kelompok:</strong> Tugas-tugas ini mencakup
+          kumpulan pekerjaan yang telah diselesaikan secara mandiri maupun
+          bersama tim. Tugas individu dirancang untuk mengasah kemampuan dasar
+          Anda dalam Java, seperti pengolahan data, penggunaan pustaka Java
+          standar, dan pemrograman berorientasi objek (OOP).
+        </li>
+
+        <li style="text-align: justify">
+          <strong>Tugas Individu:</strong> Kumpulan tugas yang dapat dikerjakan
+          secara mandiri untuk mengasah kemampuan pemrograman Java Anda. Tugas
+          ini berfokus pada penerapan konsep dasar Java seperti pengolahan
+          string, koleksi data, dan penggunaan pustaka Java.
+        </li>
+        <li style="text-align: justify">
+          <strong>Tugas Kelompok:</strong> Tugas yang dilakukan dalam kelompok,
+          biasanya berfokus pada pembuatan aplikasi berbasis Java, seperti
+          aplikasi berbasis desktop atau aplikasi web menggunakan framework Java
+          seperti Spring.
+        </li>
+        <li style="text-align: justify">
+          <strong>Semua Tugas:</strong> Jika Anda ingin melihat semua tugas yang
+          telah diselesaikan, baik tugas individu maupun tugas kelompok, Anda
+          dapat memilih kategori ini untuk menelusuri dan memahami berbagai
+          proyek yang telah dikerjakan.
+        </li>
+      </ul>
+      <p style="text-align: justify">
+        Pilih kategori tugas yang Anda inginkan dari menu di atas untuk memulai
+        dan tingkatkan kemampuan Java Anda. Jika Anda ingin belajar lebih lanjut
+        tentang dasar-dasar Java, Anda juga dapat mengakses materi pembelajaran
+        atau tutorial yang tersedia di halaman lain.
+      </p>
+    </div>
+    <footer>
+      <p>&copy; 2025 Creative Career Blog. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>

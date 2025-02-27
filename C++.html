@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>C++ Tasks</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      header {
+        background: linear-gradient(135deg, #6a11cb, #2575fc);
+        color: white;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 2.5em;
+      }
+
+      nav {
+        background: #2575fc;
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        flex-wrap: wrap;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 1em;
+      }
+
+      nav a:hover {
+        text-decoration: underline;
+      }
+
+      nav .dropdown {
+        position: relative;
+      }
+
+      nav .dropdown-menu {
+        display: none;
+        position: absolute;
+        background-color: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+      }
+
+      nav .dropdown-menu a {
+        color: #2575fc;
+        padding: 10px 20px;
+        display: block;
+        text-decoration: none;
+      }
+
+      nav .dropdown-menu a:hover {
+        background-color: #f4f4f9;
+      }
+
+      nav .dropdown:hover .dropdown-menu {
+        display: block;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .container h2 {
+        color: #2575fc;
+        border-bottom: 2px solid #2575fc;
+        padding-bottom: 5px;
+      }
+
+      .container p {
+        line-height: 1.6;
+        margin: 10px 0;
+      }
+
+      footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 20px;
+      }
+
+      footer p {
+        margin: 0;
+        font-size: 0.9em;
+      }
+
+      @media (max-width: 600px) {
+        nav a {
+          margin: 0 10px;
+          font-size: 0.9em;
+        }
+
+        header h1 {
+          font-size: 2em;
+        }
+
+        .container {
+          padding: 15px;
+        }
+
+        p {
+          text-align: justify;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>C++ Tasks</h1>
+    </header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="TENTANG_SAYA.html">About Me</a>
+      <div class="dropdown">
+        <a href="#">My Service ▼</a>
+        <div class="dropdown-menu">
+          <a href="FREELANCE.html">Fiver</a>
+          <a href="FREELANCE_2.html">Lynk</a>
+          <a href="YOUTUBE.html">YouTube</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#">My Favorite ▼</a>
+        <div class="dropdown-menu">
+          <a href="ANIME.html">Anime</a>
+          <a href="MANGA.html">Manga</a>
+          <a href="GAMES.html">Games</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#">My Coding Task ▼</a>
+        <div class="dropdown-menu">
+          <a href="C++.html">C++</a>
+          <a href="CSS.html">CSS</a>
+          <a href="C_SHARP.html">C#</a>
+          <a href="PYTHON.html">Python</a>
+          <a href="HTML.html">Html</a>
+          <a href="PHP.html">PHP</a>
+          <a href="JAVA.html">Java</a>
+          <a href="JAVASCRIPT.html">Javascript</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#">C++ ▼</a>
+        <div class="dropdown-menu">
+          <a href="TUGAS_INDI_KELOM.html">Tugas Individu & Kelompok</a>
+          <a href="TUGAS_INDIVIDU.html">Penjelasan T.Individu</a>
+          <a href="TUGAS_KELOMPOK.html">Penjelasan T.Kelompok</a>
+          <a href="SEMUA_TUGAS.html">Semua Tugas</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#">Arduino ▼</a>
+        <div class="dropdown-menu">
+          <a href="SIMPLE_LED_LOOP.html">Simple LED Loop</a>
+          <a href="SIMPLE_LED_ON_OFF.html">Simple LED On-Off</a>
+          <a href="HIGHT_AKTIF.html">High Aktif</a>
+          <a href="LOW_AKTIF.html">Low Aktif</a>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <h2>Welcome to C++ Tasks</h2>
+      <p style="text-align: justify">
+        Selamat datang di halaman tugas C++. Di sini, Anda dapat menemukan
+        berbagai macam tugas yang berhubungan dengan -bahasa pemrograman C++.
+        Bahasa C++ adalah bahasa pemrograman yang sering digunakan untuk
+        pengembangan perangkat lunak, aplikasi desktop, dan game. C++ memiliki
+        fitur seperti pemrograman berorientasi objek, pengelolaan memori yang
+        efisien, dan kemampuan untuk mengakses berbagai perangkat keras secara
+        langsung.
+      </p>
+      <p style="text-align: justify">
+        Pada halaman ini, Anda dapat mengakses tugas-tugas yang dibagi ke dalam
+        kategori tertentu:
+      </p>
+      <ul>
+        <li style="text-align: justify">
+          <strong>Tugas Individu dan Kelompok:</strong> Tugas-tugas ini mencakup
+          kumpulan pekerjaan yang telah diselesaikan secara mandiri maupun
+          bersama tim. Tugas individu dirancang untuk mengasah kemampuan
+          pemrograman dasar Anda, seperti pengolahan data, pemrograman
+          berorientasi objek, dan manipulasi struktur data. Sementara itu, tugas
+          kelompok berfokus pada pembuatan aplikasi yang lebih besar dan
+          kompleks, yang bertujuan untuk mengembangkan kemampuan kerja sama tim
+          serta penerapan konsep C++ yang lebih mendalam. Kedua jenis tugas ini
+          dirancang untuk membantu Anda memahami dan mengaplikasikan C++ dalam
+          berbagai konteks.
+        </li>
+
+        <li style="text-align: justify">
+          <strong>Tugas Individu:</strong> Kumpulan tugas yang dapat dikerjakan
+          secara mandiri untuk mengasah kemampuan pemrograman C++ Anda. Tugas
+          ini berfokus pada penerapan konsep dasar C++ seperti pengolahan data,
+          pemrograman berorientasi objek, dan manipulasi array atau struktur
+          data lainnya.
+        </li>
+        <li style="text-align: justify">
+          <strong>Tugas Kelompok:</strong> Tugas yang dilakukan dalam kelompok,
+          biasanya berfokus pada pembuatan aplikasi yang lebih besar dan
+          kompleks dengan menggunakan berbagai fitur bahasa C++. Tugas ini
+          bertujuan untuk mengembangkan kemampuan dalam bekerja sama dalam tim
+          serta penerapan konsep C++ yang lebih mendalam.
+        </li>
+        <li style="text-align: justify">
+          <strong>Semua Tugas:</strong> Jika Anda ingin melihat semua tugas yang
+          telah diselesaikan, baik tugas individu maupun tugas kelompok, Anda
+          dapat memilih kategori ini untuk menelusuri dan memahami berbagai
+          proyek yang telah dikerjakan. Semua tugas dirancang untuk meningkatkan
+          kemampuan Anda dalam memahami dan mengaplikasikan C++ dalam berbagai
+          konteks.
+        </li>
+      </ul>
+      <p style="text-align: justify">
+        Pilih kategori tugas yang Anda inginkan dari menu di atas untuk memulai
+        dan tingkatkan kemampuan C++ Anda. Jika Anda ingin belajar lebih lanjut
+        tentang dasar-dasar C++, Anda juga dapat mengakses materi pembelajaran
+        atau tutorial yang tersedia di halaman lain.
+      </p>
+    </div>
+    <footer>
+      <p>&copy; 2025 Creative Career Blog. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>
