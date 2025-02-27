@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tugas Individu</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f4fc; /* Soft light blue */
+        color: #4c4b63; /* Darker purple-gray */
+      }
+
+      header {
+        background: linear-gradient(
+          135deg,
+          #ff9aa2,
+          #ffc3a0
+        ); /* Pastel pink to peach gradient */
+        color: white;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 2.5em;
+      }
+
+      nav {
+        background: #ffc3a0; /* Soft peach */
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        flex-wrap: wrap;
+      }
+
+      nav a {
+        color: #4c4b63; /* Darker purple-gray */
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 1em;
+      }
+
+      nav a:hover {
+        text-decoration: underline;
+      }
+
+      nav .dropdown {
+        position: relative;
+      }
+
+      nav .dropdown-menu {
+        display: none;
+        position: absolute;
+        background-color: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+      }
+
+      nav .dropdown-menu a {
+        color: #4c4b63; /* Darker purple-gray */
+        padding: 10px 20px;
+        display: block;
+        text-decoration: none;
+      }
+
+      nav .dropdown-menu a:hover {
+        background-color: #f0f4fc; /* Light blue */
+      }
+
+      nav .dropdown:hover .dropdown-menu {
+        display: block;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .container h2 {
+        color: #ff9aa2; /* Pastel pink */
+        border-bottom: 2px solid #ff9aa2;
+        padding-bottom: 5px;
+      }
+
+      .container p {
+        line-height: 1.6;
+        margin: 10px 0;
+      }
+
+      .task-list {
+        margin: 20px 0;
+      }
+
+      .task-list h4 {
+        color: #4c4b63; /* Darker purple-gray */
+        margin-top: 20px;
+      }
+
+      .task-list p {
+        margin: 10px 0;
+      }
+
+      footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 20px;
+      }
+
+      footer p {
+        margin: 0;
+        font-size: 0.9em;
+      }
+
+      select {
+        width: 100%;
+        padding: 10px;
+        margin: 20px 0;
+        font-size: 1em;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      @media (max-width: 600px) {
+        nav a {
+          margin: 0 10px;
+          font-size: 0.9em;
+        }
+
+        header h1 {
+          font-size: 2em;
+        }
+
+        .container {
+          padding: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Anime</h1>
+      <p>Dokumentasi dan Penjelasan Anime Favorit saya</p>
+    </header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="TENTANG_SAYA.html">About Me</a>
+      <div class="dropdown">
+        <a href="#">My Service ▼</a>
+        <div class="dropdown-menu">
+          <a href="FREELANCE.html">Fiver</a>
+          <a href="FREELANCE_2.html">Lynk</a>
+          <a href="YOUTUBE.html">YouTube</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#">My Favorite ▼</a>
+        <div class="dropdown-menu">
+          <a href="ANIME.html">Anime</a>
+          <a href="MANGA.html">Manga</a>
+          <a href="GAMES.html">Games</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#">My Coding Task ▼</a>
+        <div class="dropdown-menu">
+          <a href="C++.html">C++</a>
+          <a href="CSS.html">CSS</a>
+          <a href="C_SHARP.html">C#</a>
+          <a href="PYTHON.html">Python</a>
+          <a href="HTML.html">Html</a>
+          <a href="PHP.html">PHP</a>
+          <a href="JAVA.html">Java</a>
+          <a href="JAVASCRIPT.html">Javascript</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h2>Selamat Datang di Dokumentasi dan penjelasan favorit Anime saya</h2>
+      <p>Berikut adalah beberapa favorit Anime saya</p>
+      <select id="taskDropdown" onchange="showTaskDetails()">
+        <option value="">Pilih Anime untuk melihat detail</option>
+        <option value="task1">Sakamoto Days</option>
+        <option value="task2">Saint Seiya</option>
+        <option value="task3">Naruto</option>
+        <option value="task4">DragonBall</option>
+        <option value="task5">One Piece</option>
+        <option value="task6">Bleach</option>
+      </select>
+
+      <div class="task-list" id="taskDetails">
+        <!-- Details will be dynamically inserted here -->
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Rizky Delfa Ramadhani. All rights reserved.</p>
+    </footer>
+
+    <script>
+      function showTaskDetails() {
+        const taskDetails = document.getElementById("taskDetails");
+        const selectedTask = document.getElementById("taskDropdown").value;
+
+        const tasks = {
+          task1: `
+                        <h2>Sakamoto Days</h2>
+                  <img src="https://upload.wikimedia.org/wikipedia/en/8/81/Sakamoto_Days_volume_1_cover.jpg" alt="Sakamoto Days Cover" style="width: 100%; max-width: 300px; border-radius: 10px; margin-bottom: 10px;">
+                  <p>
+                    <strong>"Sakamoto Days"</strong> adalah manga aksi-komedi yang mengisahkan perjalanan hidup Taro Sakamoto, seorang mantan pembunuh bayaran legendaris yang kini menjalani kehidupan damai sebagai pemilik toko kelontong.
+                    Dulu, ia adalah seorang pembunuh tak terkalahkan, ditakuti di dunia bawah tanah. Namun, setelah jatuh cinta dan menikah, ia memutuskan untuk meninggalkan dunia kriminal dan menjalani kehidupan sederhana bersama keluarganya.
+                  </p>
+                  <h3>Sinopsis</h3>
+                  <p>
+                    Kehidupan Sakamoto yang damai terusik ketika organisasi bayangan yang pernah ia tinggalkan mulai memburunya. Mereka menganggap Sakamoto sebagai ancaman besar yang harus disingkirkan.
+                    Meski kini bertubuh gemuk dan terlihat santai, insting bertarung Sakamoto tetap tajam. Dengan kekuatan luar biasa dan strategi cerdik, ia berusaha melindungi keluarganya dan mempertahankan kehidupannya yang damai.
+                  </p>
+                  <h3>Karakter Utama</h3>
+                  <ul>
+                    <li><strong>Taro Sakamoto:</strong> Mantan pembunuh legendaris yang kini menjadi pemilik toko kecil. Meski terlihat santai, ia tetap memiliki refleks dan kekuatan luar biasa.</li>
+                    <li><strong>Shin Asakura:</strong> Seorang pembunuh muda berbakat dengan kemampuan telepati yang menjadi rekan Sakamoto.</li>
+                    <li><strong>Lu Xiaotang:</strong> Seorang ahli bela diri dari Tiongkok yang bekerja di toko Sakamoto.</li>
+                    <li><strong>Slur:</strong> Musuh misterius yang mengincar dunia kriminal dan memiliki ambisi besar.</li>
+                  </ul>
+                  <h3>Kenapa Harus Nonton atau Baca?</h3>
+                  <ul>
+                    <li>Perpaduan aksi dan komedi yang sempurna, membuat cerita selalu seru dan menghibur.</li>
+                    <li>Karakter yang unik dan menarik, masing-masing memiliki latar belakang yang kuat.</li>
+                    <li>Ilustrasi pertarungan yang dinamis dan epik, membuat adegan aksi sangat hidup.</li>
+                    <li>Cerita yang ringan tapi tetap penuh kejutan dan plot twist yang menarik.</li>
+                  </ul>
+                  <h3>Informasi Tambahan</h3>
+                  <ul>
+                    <li><strong>Penulis & Ilustrator:</strong> Yuto Suzuki</li>
+                    <li><strong>Genre:</strong> Aksi, Komedi, Shounen</li>
+                    <li><strong>Jumlah Volume:</strong> Sedang berjalan</li>
+                    <li><strong>Adaptasi Anime:</strong> Dalam pengembangan</li>
+                  </ul>
+                  <p><em>Siap melihat aksi epik dan kocak Sakamoto dalam menghadapi para pembunuh yang mengincarnya? Jangan lewatkan petualangan serunya!</em></p>
+                        `,
+          task2: `
+                        <h2>Saint Seiya</h2>
+                  <img src="https://upload.wikimedia.org/wikipedia/en/1/10/Saint_Seiya_Manga_Volume_1_cover.jpg" alt="Saint Seiya Cover" style="width: 100%; max-width: 300px; border-radius: 10px; margin-bottom: 10px;">
+                  <p>
+                    <strong>"Saint Seiya"</strong> adalah manga dan anime yang terkenal, karya Masami Kurumada. Ceritanya mengikuti perjuangan para pejuang bernama "Saints" yang melindungi dewi Athena.
+                    Para pejuang ini mengenakan armor yang terinspirasi oleh konstelasi di langit dan memiliki kekuatan luar biasa. Mereka bertempur untuk melindungi dunia dan dewi mereka dari ancaman jahat.
+                  </p>
+                  <h3>Sinopsis</h3>
+                  <p>
+                    Cerita dimulai ketika Seiya, seorang remaja yang diberi armor Pegasus, bergabung dengan kelompok Saints yang dipimpin oleh Saori Kido (yang merupakan reinkarnasi dari dewi Athena).
+                    Mereka harus menghadapi berbagai musuh kuat, mulai dari para Saints jahat hingga para dewa yang berusaha menghancurkan dunia. Setiap karakter memiliki cerita latar belakang yang unik dan berperan penting dalam pertarungan.
+                  </p>
+                  <h3>Karakter Utama</h3>
+                  <ul>
+                    <li><strong>Seiya:</strong> Pegasus Saint yang penuh semangat dan tak kenal takut. Dia adalah pemimpin kelompok Saint dan berjuang untuk melindungi Athena.</li>
+                    <li><strong>Saori Kido:</strong> Dewi Athena yang terlahir kembali sebagai seorang gadis. Ia menjadi inspirasi bagi para Saints untuk berjuang.</li>
+                    <li><strong>Shiryu:</strong> Dragon Saint yang dikenal karena keberanian dan kekuatan luar biasanya. Dia adalah teman dekat Seiya.</li>
+                    <li><strong>Hyoga:</strong> Swan Saint yang memiliki keahlian bertarung dengan elemen es. Ia sering digambarkan dengan sifat dingin dan penuh misteri.</li>
+                    <li><strong>Ikki:</strong> Phoenix Saint yang memiliki kekuatan tak terduga dan menjadi musuh yang tangguh sebelum akhirnya bergabung dengan Seiya dan yang lainnya.</li>
+                  </ul>
+                  <h3>Kenapa Harus Nonton atau Baca?</h3>
+                  <ul>
+                    <li>Pertarungan epik antar Saint dan dewa yang penuh emosi dan strategi.</li>
+                    <li>Karakter yang berkembang seiring waktu dengan kisah yang sangat mendalam.</li>
+                    <li>Visualisasi pertarungan yang menarik dan kostum berbasis konstelasi yang ikonik.</li>
+                    <li>Petualangan yang penuh dengan keberanian, pengorbanan, dan persahabatan yang kuat.</li>
+                  </ul>
+                  <h3>Informasi Tambahan</h3>
+                  <ul>
+                    <li><strong>Penulis & Ilustrator:</strong> Masami Kurumada</li>
+                    <li><strong>Genre:</strong> Aksi, Petualangan, Fantasi, Shounen</li>
+                    <li><strong>Jumlah Volume:</strong> 28 Volume (Manga)</li>
+                    <li><strong>Adaptasi Anime:</strong> Tersedia (Original + Beberapa Spin-Off)</li>
+                  </ul>
+                  <p><em>Ikuti perjalanan Seiya dan para Saint dalam melindungi dunia! Petualangan penuh aksi dan emosi yang tak boleh dilewatkan!</em></p>
+                        `,
+          task3: `
+                        <h2>Naruto</h2>
+                  <img src="https://upload.wikimedia.org/wikipedia/en/9/97/Naruto_manga_volume_1.jpg" alt="Naruto Cover" style="width: 100%; max-width: 300px; border-radius: 10px; margin-bottom: 10px;">
+                  <p>
+                    <strong>"Naruto"</strong> adalah manga dan anime yang menceritakan kisah Naruto Uzumaki, seorang ninja muda yang bercita-cita menjadi Hokage, pemimpin desa yang sangat dihormati.
+                    Naruto dibesarkan sebagai anak yatim piatu dengan pengaruh buruk dari rubah ekor sembilan (Kyubi) yang disegel di dalam dirinya. Dia selalu merasa kesepian dan terasing, namun dengan semangat yang kuat, ia berusaha untuk diterima oleh orang-orang di desanya.
+                  </p>
+                  <h3>Sinopsis (Naruto)</h3>
+                  <p>
+                    Pada awal cerita, Naruto adalah seorang ninja pemula yang suka berbuat nakal, namun dia memiliki tekad kuat untuk menjadi Hokage. Meskipun sering dijauhi oleh orang lain karena kekuatan dalam dirinya, dia membentuk persahabatan yang erat dengan teman-temannya, seperti Sasuke Uchiha dan Sakura Haruno.
+                    Cerita berfokus pada perjalanan Naruto untuk menguasai kemampuan ninja, melawan musuh yang kuat, serta memecahkan misteri mengenai masa lalunya dan kekuatan yang ada di dalam dirinya.
+                  </p>
+                  <h3>Sinopsis (Naruto Shippuden)</h3>
+                  <p>
+                    Setelah dua setengah tahun, Naruto kembali ke desa setelah berlatih untuk menjadi ninja yang lebih kuat. Kini lebih dewasa, ia kembali bersama teman-temannya untuk menghadapi berbagai ancaman yang lebih besar.
+                    Naruto Shippuden memperlihatkan perjalanan Naruto dalam melawan organisasi kriminal yang dikenal sebagai Akatsuki, yang berencana untuk mengumpulkan semua bijuu (makhluk berantai chakra besar).
+                    Selain itu, Naruto juga semakin dekat dengan tujuannya untuk mengetahui kebenaran di balik kehidupan keluarganya, terutama mengenai ayahnya, Minato Namikaze, dan peranannya sebagai Hokage Keempat.
+                  </p>
+                  <h3>Karakter Utama</h3>
+                  <ul>
+                    <li><strong>Naruto Uzumaki:</strong> Protagonis utama, seorang ninja yang penuh semangat dan bercita-cita menjadi Hokage. Dikenal dengan semangat tak kenal lelah dan kemampuannya untuk berteman dengan siapa saja.</li>
+                    <li><strong>Sasuke Uchiha:</strong> Sahabat dan rival Naruto. Sasuke adalah anggota klan Uchiha yang kuat, namun dibayangi oleh dendam terhadap kakaknya yang membunuh seluruh klannya.</li>
+                    <li><strong>Sakura Haruno:</strong> Teman sekelas Naruto yang cerdas dan kuat. Dia memiliki perasaan yang mendalam terhadap Sasuke dan menjadi ninja medis yang sangat berbakat.</li>
+                    <li><strong>Kakashi Hatake:</strong> Guru Naruto, Sasuke, dan Sakura. Dikenal karena kecerdikannya dan menggunakan Sharingan milik klan Uchiha sebagai teknik andalannya.</li>
+                    <li><strong>Jiraiya:</strong> Guru Naruto yang mengajarinya banyak teknik, termasuk Rasengan, serta menjadi figur ayah baginya.</li>
+                  </ul>
+                  <h3>Kenapa Harus Nonton atau Baca?</h3>
+                  <ul>
+                    <li>Perjalanan karakter yang kuat dari seorang anak yang kesepian menjadi pahlawan yang dihormati.</li>
+                    <li>Konflik internal dan persahabatan yang kompleks, yang sangat menarik dan mengharukan.</li>
+                    <li>Serangkaian pertarungan epik yang penuh strategi, kekuatan luar biasa, dan perkembangan karakter yang menarik.</li>
+                    <li>Cerita yang kaya akan nilai-nilai persahabatan, pengorbanan, dan pencapaian tujuan hidup.</li>
+                  </ul>
+                  <h3>Informasi Tambahan</h3>
+                  <ul>
+                    <li><strong>Penulis & Ilustrator:</strong> Masashi Kishimoto</li>
+                    <li><strong>Genre:</strong> Aksi, Petualangan, Drama, Shounen</li>
+                    <li><strong>Jumlah Volume:</strong> 72 Volume (Naruto), 500 episode (Naruto Shippuden)</li>
+                    <li><strong>Adaptasi Anime:</strong> Tersedia (Naruto dan Naruto Shippuden)</li>
+                  </ul>
+                  <p><em>Siap mengikuti perjalanan Naruto untuk mewujudkan impiannya menjadi Hokage dan melindungi desa dari ancaman besar? Jangan lewatkan petualangannya!</em></p>
+                        `,
+          task4: `
+                  <h2>Dragon Ball Series</h2>
+                  <img src="https://upload.wikimedia.org/wikipedia/en/8/81/Dragon_Ball_Logo.png" alt="Dragon Ball Logo" style="width: 100%; max-width: 300px; border-radius: 10px; margin-bottom: 10px;">
+                  <p>
+                    <strong>"Dragon Ball"</strong> adalah seri manga dan anime legendaris yang diciptakan oleh Akira Toriyama. Dimulai pada tahun 1984, kisah Dragon Ball mengikuti petualangan seorang pemuda bernama Goku, yang awalnya tidak tahu tentang asal usulnya dan memiliki kekuatan luar biasa. Seiring berjalannya waktu, Goku berkelana, bertarung, dan berkembang menjadi salah satu pejuang terkuat di alam semesta.
+                  </p>
+                  <h3>Dragon Ball (Original Series)</h3>
+                  <p>
+                    <strong>"Dragon Ball"</strong> adalah awal dari segala petualangan Goku, dimulai dengan pencariannya untuk mengumpulkan tujuh bola naga legendaris yang dapat memanggil naga raksasa dan memberikan satu permintaan. Di sini, Goku bertemu dengan banyak karakter ikonik seperti Bulma, Master Roshi, dan Krillin, serta menghadapi berbagai tantangan dan turnamen yang menguji kekuatan dan keterampilannya.
+                  </p>
+                  <h3>Dragon Ball Z</h3>
+                  <p>
+                    <strong>"Dragon Ball Z"</strong> melanjutkan petualangan Goku, kali ini dengan fokus pada pertempuran yang lebih besar dan lebih epik. Goku mulai mengetahui asal-usulnya sebagai seorang Saiyan, ras pejuang luar biasa, dan berhadapan dengan berbagai musuh kuat seperti Vegeta, Frieza, Cell, dan Majin Buu.
+                    Dalam Dragon Ball Z, cerita semakin intens dengan pertempuran di tingkat kosmik, menyaksikan pertarungan yang penuh ledakan energi besar dan transformasi yang memukau seperti Super Saiyan.
+                  </p>
+                  <h3>Dragon Ball GT (Non Canon)</h3>
+                  <p>
+                    <strong>"Dragon Ball GT"</strong> adalah sekuel yang tidak berdasarkan manga asli dan oleh karena itu dianggap sebagai cerita non-canon dalam dunia Dragon Ball. Meskipun tidak dianggap bagian dari alur cerita utama, GT masih memiliki tempat di hati penggemar.
+                    Goku kembali menjadi anak kecil setelah terkena sebuah bola naga dan berpetualang dengan Pan (cucunya) dan Trunks untuk mengumpulkan Bola Naga. Dragon Ball GT memperkenalkan konsep Super Saiyan 4, transformasi yang sangat populer di kalangan penggemar.
+                  </p>
+                  <h3>Dragon Ball Super</h3>
+                  <p>
+                    <strong>"Dragon Ball Super"</strong> adalah kelanjutan resmi dari Dragon Ball Z dan menjadi bagian dari kanon utama. Dimulai setelah pertempuran dengan Majin Buu, Dragon Ball Super memperkenalkan karakter-karakter baru seperti Beerus, Dewa Kehancuran, dan Goku yang belajar kekuatan baru seperti Super Saiyan God dan Ultra Instinct.
+                    Cerita ini melibatkan pertarungan antar alam semesta, dengan Goku dan teman-temannya harus menghadapi ancaman dari alam semesta lain, termasuk pertempuran epik dengan Jiren, seorang pejuang kuat dari Alam Semesta 11. Dragon Ball Super juga memperkenalkan konsep "Tournament of Power" dan mengubah banyak dinamika dalam dunia Dragon Ball.
+                  </p>
+                  <h3>Dragon Ball Daima</h3>
+                  <p>
+                    <strong>"Dragon Ball Daima"</strong> adalah seri terbaru yang diumumkan dan saat ini masih dalam tahap pengembangan. Meskipun belum banyak informasi yang tersedia, Dragon Ball Daima diperkirakan akan menjadi cerita yang memperkenalkan berbagai elemen baru dalam dunia Dragon Ball.
+                    Diharapkan untuk melanjutkan kisah setelah peristiwa Dragon Ball Super dan membawa lebih banyak aksi, kekuatan baru, serta misteri yang lebih dalam untuk dijelajahi oleh para penggemar.
+                  </p>
+                  <h3>Karakter Utama</h3>
+                  <ul>
+                    <li><strong>Goku:</strong> Protagonis utama yang dikenal karena kekuatan luar biasa dan semangat petualangannya. Ia adalah seorang Saiyan yang terus berkembang, mengatasi batas-batas kekuatan dan bertarung untuk melindungi teman-temannya dan alam semesta.</li>
+                    <li><strong>Vegeta:</strong> Pangeran Saiyan yang sering menjadi rival sekaligus teman dekat Goku. Vegeta terkenal karena egonya yang tinggi, namun juga perkembangan besar dalam hal kekuatan dan sifatnya yang lebih baik seiring berjalannya waktu.</li>
+                    <li><strong>Gohan:</strong> Anak Goku yang berbakat dan memiliki potensi besar, terutama dalam bentuk Super Saiyan 2. Gohan memainkan peran penting dalam mengalahkan Cell dan memiliki sisi yang lebih tenang dan intelektual dibandingkan Goku.</li>
+                    <li><strong>Piccolo:</strong> Seorang Namekian yang menjadi salah satu teman dekat Goku. Piccolo dikenal karena kecerdikannya dan kemampuannya untuk mengembangkan teknik yang sangat kuat.</li>
+                    <li><strong>Frieza:</strong> Musuh terbesar Goku selama Dragon Ball Z, Frieza adalah makhluk jahat yang memiliki ambisi besar untuk menguasai alam semesta. Ia adalah salah satu antagonis yang paling ikonik dalam sejarah anime.</li>
+                  </ul>
+                  <h3>Kenapa Harus Nonton atau Baca?</h3>
+                  <ul>
+                    <li>Serangkaian pertarungan yang sangat seru dan penuh dengan kekuatan luar biasa yang menjadi ciri khas Dragon Ball.</li>
+                    <li>Karakter-karakter yang sangat ikonik dan mendalam, seperti Goku dan Vegeta, yang terus berkembang dalam setiap seri.</li>
+                    <li>Transformasi dan teknik-teknik baru yang selalu memberikan kejutan bagi penggemar.</li>
+                    <li>Petualangan yang seru dan penuh dengan humor, drama, serta pengorbanan yang membuat setiap seri sangat berkesan.</li>
+                  </ul>
+                  <h3>Informasi Tambahan</h3>
+                  <ul>
+                    <li><strong>Penulis & Ilustrator:</strong> Akira Toriyama</li>
+                    <li><strong>Genre:</strong> Aksi, Petualangan, Fantasi, Shounen</li>
+                    <li><strong>Jumlah Volume:</strong> 42 Volume (Dragon Ball), 291 Episode (Dragon Ball Z), 64 Episode (Dragon Ball GT), 131 Episode (Dragon Ball Super)</li>
+                    <li><strong>Adaptasi Anime:</strong> Tersedia (Dragon Ball, Dragon Ball Z, Dragon Ball GT, Dragon Ball Super)</li>
+                  </ul>
+                  <p><em>Ikuti perjalanan Goku dan teman-temannya dalam melindungi alam semesta dari ancaman yang selalu muncul. Petualangan yang seru, penuh kekuatan, dan karakter yang menginspirasi!</em></p>
+                `,
+          task5: `
+                   <h2>One Piece</h2>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/OnePiece_Logo.svg" alt="One Piece Logo" style="width: 100%; max-width: 300px; border-radius: 10px; margin-bottom: 10px;">
+            <p>
+              <strong>"One Piece"</strong> adalah salah satu manga dan anime terpopuler yang diciptakan oleh Eiichiro Oda. Dimulai pada tahun 1997, kisah ini mengikuti petualangan Luffy dan kru bajak lautnya dalam mencari harta karun legendaris yang dikenal dengan nama "One Piece". Cerita ini bukan hanya tentang pencarian harta, tetapi juga tentang persahabatan, keberanian, dan cita-cita besar yang menginspirasi banyak orang di dunia.
+            </p>
+            <h3>Sinopsis</h3>
+            <p>
+              <strong>Luffy</strong>, seorang pemuda yang ingin menjadi Raja Bajak Laut, memulai perjalanannya untuk mencari "One Piece", harta karun terbesar yang konon memberikan kekuasaan tak terbatas kepada pemiliknya. Untuk mencapai tujuannya, Luffy mengumpulkan sekutu dan teman-teman hebat yang akan membantunya mengatasi tantangan yang lebih besar. Bersama kru Bajak Laut Topi Jerami, Luffy menghadapi pemerintah dunia, bajak laut kuat lainnya, serta berbagai monster laut dan petualangan epik yang membawa mereka ke tempat-tempat tak terduga.
+            </p>
+            <h3>Karakter Utama</h3>
+            <ul>
+              <li><strong>Luffy (Monkey D. Luffy):</strong> Protagonis utama yang memiliki mimpi menjadi Raja Bajak Laut. Dengan kekuatan buah iblis Gomu Gomu no Mi yang membuat tubuhnya elastis, Luffy memiliki semangat juang yang tak tergoyahkan dan hati yang besar.</li>
+              <li><strong>Roronoa Zoro:</strong> Mantan pemburu hadiah yang menjadi swordsman utama kru Bajak Laut Topi Jerami. Zoro memiliki tekad yang kuat untuk menjadi swordsman terkuat di dunia dan selalu melindungi teman-temannya.</li>
+              <li><strong>Nami:</strong> Ahli navigasi dan pencuri yang memiliki masa lalu yang tragis. Nami bergabung dengan kru Luffy setelah mereka membantunya membebaskan desanya dari bajak laut yang jahat.</li>
+              <li><strong>Usopp:</strong> Seorang penembak jitu dan pembohong ulung yang memiliki impian menjadi seorang pahlawan sejati. Meski sering cemas, Usopp selalu menemukan keberanian ketika dibutuhkan.</li>
+              <li><strong>Sanji:</strong> Koki kru Topi Jerami yang berasal dari sebuah restoran di lautan. Sanji berjuang untuk menemukan All Blue, tempat di mana semua samudra bertemu, dan menjadi koki terbaik di dunia.</li>
+              <li><strong>Chopper:</strong> Dokter kru yang merupakan rusa yang memakan Buah Iblis Hito Hito no Mi, memberikan kemampuan untuk berubah bentuk. Meskipun tampak lucu, Chopper adalah dokter yang sangat terampil dan peduli terhadap teman-temannya.</li>
+              <li><strong>Nico Robin:</strong> Seorang arkeolog yang memiliki kemampuan untuk memanipulasi tubuhnya melalui kekuatan Buah Iblis Hana Hana no Mi. Robin memiliki pengetahuan tentang sejarah dunia dan berperan penting dalam mengungkap misteri besar.</li>
+              <li><strong>Franky:</strong> Seorang cyborg dan kapal pembuat yang menciptakan kapal Topi Jerami, Thousand Sunny. Franky adalah seorang yang bersemangat dan memiliki keterampilan luar biasa dalam membangun dan bertarung.</li>
+              <li><strong>Brook:</strong> Seorang musisi yang juga seorang tengkorak hidup setelah mengkonsumsi Buah Iblis Yomi Yomi no Mi. Meskipun berpenampilan menyeramkan, Brook memiliki jiwa yang ceria dan penuh humor.</li>
+              <li><strong>Jinbe:</strong> Seorang manusia ikan dan ahli bela diri yang bergabung dengan kru Luffy. Jinbe adalah sosok yang bijaksana dan bertanggung jawab, serta memiliki rasa hormat yang tinggi terhadap persahabatan dan keadilan.</li>
+            </ul>
+            <h3>Arcs Terkenal dalam One Piece</h3>
+            <ul>
+              <li><strong>Arlong Park:</strong> Dimulai dengan perjuangan Nami untuk membebaskan desanya dari kekuasaan Arlong, seorang manusia ikan yang jahat. Ini adalah salah satu arc yang memperlihatkan betapa besar rasa persahabatan kru Topi Jerami.</li>
+              <li><strong>Enies Lobby:</strong> Salah satu arc paling emosional di mana kru Topi Jerami harus melawan Pemerintah Dunia untuk menyelamatkan Robin. Pertempuran ini memperkenalkan kami pada kekuatan baru dan pengorbanan luar biasa.</li>
+              <li><strong>Marineford:</strong> Arc ini adalah titik balik besar dalam cerita, dengan pertempuran besar antara bajak laut dan marinir untuk menyelamatkan Luffy’s kakaknya, Ace. Pertempuran ini sangat epik dan penuh dengan momen emosional yang tak terlupakan.</li>
+              <li><strong>Dressrosa:</strong> Di sini, kru Topi Jerami melawan Doflamingo, seorang bajak laut kuat yang mengendalikan sebuah kerajaan. Arc ini memperkenalkan karakter-karakter baru yang sangat berpengaruh pada cerita dan karakter Luffy.</li>
+              <li><strong>Whole Cake Island:</strong> Luffy dan kru Topi Jerami berusaha menyelamatkan Sanji dari pernikahan yang dipaksakan dengan Big Mom, salah satu Yonko yang paling berbahaya. Arc ini penuh dengan intrik politik dan pertarungan yang menegangkan.</li>
+              <li><strong>Wano:</strong> Salah satu arc yang saat ini sedang berlangsung, di mana kru Topi Jerami beraliansi dengan samurai untuk mengalahkan Kaido, salah satu dari empat Yonko yang mengendalikan Wano, sebuah negara yang diliputi oleh kekejaman dan tirani.</li>
+            </ul>
+            <h3>Kenapa Harus Nonton atau Baca?</h3>
+            <ul>
+              <li><strong>Karakter yang mendalam dan beragam:</strong> Setiap karakter dalam One Piece memiliki latar belakang dan impian yang unik, yang membuat mereka lebih dari sekadar figuran dalam cerita. Keberagaman karakter dan hubungan mereka yang kuat menjadi inti dari cerita.</li>
+              <li><strong>Perjuangan dan Impian:</strong> Salah satu tema utama dalam One Piece adalah mengejar impian meskipun menghadapi rintangan besar. Setiap karakter memiliki tujuan yang sangat personal dan siap berjuang untuk mencapainya.</li>
+              <li><strong>Petualangan yang tak terduga:</strong> Dengan dunia yang sangat luas, petualangan Luffy dan kru bajak laut Topi Jerami selalu penuh kejutan. Setiap arc baru membawa misteri dan tantangan yang semakin kompleks.</li>
+              <li><strong>Pesan persahabatan dan pengorbanan:</strong> One Piece mengajarkan pentingnya persahabatan, kepercayaan, dan pengorbanan. Ini adalah cerita tentang bagaimana kru yang solid dapat mengatasi apapun bersama-sama.</li>
+            </ul>
+            <h3>Informasi Tambahan</h3>
+            <ul>
+              <li><strong>Penulis & Ilustrator:</strong> Eiichiro Oda</li>
+              <li><strong>Genre:</strong> Aksi, Petualangan, Fantasi, Shounen</li>
+              <li><strong>Jumlah Volume:</strong> Lebih dari 100 volume (terus berjalan)</li>
+              <li><strong>Adaptasi Anime:</strong> Tersedia, lebih dari 1000 episode anime dengan adaptasi film dan spesial tambahan</li>
+            </ul>
+            <p><em>One Piece adalah perjalanan epik yang penuh dengan momen emosional, pertarungan luar biasa, dan persahabatan yang tak tergoyahkan. Ikuti Luffy dan kru Topi Jerami dalam pencarian mereka untuk menjadi yang terhebat!</em></p>
+                        `,
+          task6: `
+              <h2>Bleach</h2>
+        <img src="https://upload.wikimedia.org/wikipedia/en/f/f6/Bleach_manga_logo.png" alt="Bleach Logo" style="width: 100%; max-width: 300px; border-radius: 10px; margin-bottom: 10px;">
+        <p>
+          <strong>"Bleach"</strong> adalah manga dan anime karya Tite Kubo yang mengikuti petualangan Ichigo Kurosaki, seorang remaja yang memiliki kemampuan untuk melihat roh dan akhirnya menjadi seorang Shinigami, atau Dewa Kematian. Dalam perjalanannya, Ichigo melindungi dunia manusia dari roh jahat yang disebut Hollow dan membantu roh-roh yang tidak bisa menemukan kedamaian menuju kehidupan setelah mati.
+        </p>
+        <h3>Sinopsis</h3>
+        <p>
+          Ichigo Kurosaki adalah seorang remaja yang memiliki kemampuan untuk melihat roh. Kehidupan normalnya berubah drastis ketika ia bertemu dengan Rukia Kuchiki, seorang Shinigami yang datang ke dunia manusia untuk melawan Hollow, roh jahat yang mengancam umat manusia. Karena sebuah kejadian yang tak terduga, Rukia kehilangan kekuatannya dan Ichigo harus mengambil alih peran sebagai Shinigami.
+          Kini, dengan kekuatan Shinigami yang baru diperoleh, Ichigo berjuang untuk melawan Hollow dan melindungi dunia manusia sambil mencari cara untuk mengembalikan kekuatan Rukia yang hilang. Namun, perjalanan Ichigo semakin rumit dengan terungkapnya berbagai rahasia tentang dunia roh dan kekuatan besar yang mengancam kedamaian.
+        </p>
+        <h3>Karakter Utama</h3>
+        <ul>
+          <li><strong>Ichigo Kurosaki:</strong> Protagonis utama yang memiliki kemampuan melihat roh. Setelah menjadi Shinigami, Ichigo harus melindungi dunia manusia dari Hollow dan mengungkap berbagai misteri yang ada di dunia roh. Dia memiliki semangat juang yang tinggi dan sering kali bertindak sebagai pelindung bagi orang-orang di sekitarnya.</li>
+          <li><strong>Rukia Kuchiki:</strong> Seorang Shinigami yang pertama kali membawa Ichigo ke dunia roh. Rukia adalah seorang wanita yang tangguh namun juga memiliki sisi lembut dan peduli terhadap teman-temannya. Dia memiliki darah bangsawan dari keluarga Kuchiki dan berperan penting dalam perkembangan cerita.</li>
+          <li><strong>Orihime Inoue:</strong> Teman sekelas Ichigo yang memiliki kemampuan penyembuhan luar biasa dan kemampuan khusus lainnya yang berasal dari kekuatan roh. Orihime memiliki hati yang sangat baik dan selalu mendukung Ichigo dalam petualangannya.</li>
+          <li><strong>Uryu Ishida:</strong> Seorang Quincy yang memiliki kemampuan memanipulasi energi spiritual dengan busur dan panah. Meskipun pada awalnya tampak dingin dan terpisah, Uryu menjadi salah satu teman dan sekutu Ichigo yang sangat berharga.</li>
+          <li><strong>Chad (Yasutora Sado):</strong> Teman Ichigo yang memiliki tubuh besar dan kekuatan fisik luar biasa. Chad juga memiliki kekuatan roh yang memberinya kemampuan untuk melindungi orang-orang di sekitarnya.</li>
+          <li><strong>Renji Abarai:</strong> Seorang Shinigami yang awalnya menjadi lawan Ichigo, namun kemudian menjadi sekutu. Renji memiliki keterampilan bela diri yang hebat dan memiliki hubungan dekat dengan Rukia.</li>
+          <li><strong>Kisuke Urahara:</strong> Seorang mantan Shinigami yang kini menjalankan toko kecil di dunia manusia. Urahara memiliki pengetahuan luas tentang dunia roh dan membantu Ichigo dalam mempelajari kekuatannya sebagai Shinigami.</li>
+        </ul>
+        <h3>Arcs Terkenal dalam Bleach</h3>
+        <ul>
+          <li><strong>Shinigami Substitute Arc:</strong> Ini adalah arc awal di mana Ichigo mendapatkan kekuatan Shinigami dan mulai melawan Hollow. Arc ini memperkenalkan kita pada banyak karakter utama dan memberikan dasar untuk dunia Bleach yang lebih besar.</li>
+          <li><strong>Soul Society Arc:</strong> Salah satu arc terbaik dan paling emosional dalam Bleach. Di sini, Ichigo dan teman-temannya pergi ke Soul Society, dunia roh, untuk menyelamatkan Rukia yang dijatuhi hukuman mati. Arc ini mengungkapkan banyak misteri tentang sejarah Shinigami dan menunjukkan kekuatan Ichigo yang semakin berkembang.</li>
+          <li><strong>Hueco Mundo Arc:</strong> Setelah Rukia diselamatkan, Ichigo dan teman-temannya berjuang melawan Arrancar, Hollow yang telah memperoleh kekuatan Shinigami. Ini adalah arc yang penuh dengan pertempuran epik dan juga memperkenalkan karakter-karakter kuat seperti Grimmjow dan Ulquiorra.</li>
+          <li><strong>Fake Karakura Town Arc:</strong> Di sini, pertarungan besar terjadi antara Shinigami dan kelompok Aizen, yang berusaha menggulingkan Soul Society dan menguasai dunia roh. Ini adalah titik balik besar dalam cerita dengan pengkhianatan yang mengejutkan dan momen emosional yang mendalam.</li>
+          <li><strong>Fullbringer Arc:</strong> Setelah perang besar berakhir, Ichigo menghadapi tantangan baru dalam bentuk kelompok Fullbringer yang memiliki kekuatan unik. Arc ini memperkenalkan konsep baru dalam dunia Bleach dan menggali lebih dalam tentang kekuatan Ichigo.</li>
+          <li><strong>Thousand-Year Blood War Arc:</strong> Ini adalah arc penutup dalam manga Bleach yang akhirnya mengungkapkan sejarah panjang Shinigami dan Quincy. Pertempuran besar antara kedua kelompok ini menjadi fokus utama arc ini, dengan banyak pengorbanan dan momen emosional.</li>
+        </ul>
+        <h3>Kenapa Harus Nonton atau Baca?</h3>
+        <ul>
+          <li><strong>Aksi yang mendebarkan:</strong> Setiap arc di Bleach memiliki pertarungan seru dengan kekuatan spiritual yang unik. Bleach dikenal dengan pertarungan yang dramatis dan penuh taktik, yang pastinya membuat penonton dan pembaca terhanyut dalam ceritanya.</li>
+          <li><strong>Pengembangan karakter yang kuat:</strong> Setiap karakter dalam Bleach memiliki latar belakang yang menarik dan tujuan pribadi mereka sendiri. Hubungan antara karakter-karakter utama sangat mendalam dan membuat penonton merasa terhubung dengan mereka.</li>
+          <li><strong>Dunia yang kaya dan penuh misteri:</strong> Bleach memiliki dunia roh yang sangat luas, dengan berbagai divisi Shinigami, kelompok Hollow, dan misteri-misteri lainnya yang terus berkembang seiring berjalannya cerita.</li>
+          <li><strong>Konflik emosional yang mendalam:</strong> Bleach tidak hanya tentang pertarungan, tetapi juga tentang persahabatan, pengorbanan, dan menghadapi masa lalu yang kelam. Karakter-karakternya sering kali dihadapkan pada pilihan sulit yang mengubah jalan hidup mereka.</li>
+        </ul>
+        <h3>Informasi Tambahan</h3>
+        <ul>
+          <li><strong>Penulis & Ilustrator:</strong> Tite Kubo</li>
+          <li><strong>Genre:</strong> Aksi, Petualangan, Supernatural, Shounen</li>
+          <li><strong>Jumlah Volume:</strong> 74 Volume (selesai)</li>
+          <li><strong>Adaptasi Anime:</strong> Tersedia, lebih dari 360 episode anime dengan adaptasi film dan spesial tambahan. Anime ini juga mendapatkan sekuel "Bleach: Thousand-Year Blood War" yang membawa akhir cerita.</li>
+        </ul>
+        <p><em>Bleach adalah kisah epik tentang pertarungan, persahabatan, dan pencarian kebenaran di dunia roh. Siapkah kamu menyelami dunia Bleach dan mengikuti perjalanan Ichigo serta teman-temannya dalam menghadapi musuh-musuh yang lebih kuat?</em></p>
+        `,
+        };
+
+        taskDetails.innerHTML = tasks[selectedTask] || "";
+      }
+    </script>
+  </body>
+</html>

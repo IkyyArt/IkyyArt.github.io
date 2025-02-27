@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tugas Individu</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #2e2e2e; /* Dark grey background for elegance */
+        color: #fff;
+      }
+
+      header {
+        background: linear-gradient(
+          135deg,
+          #0d1b2a,
+          #1e2a47
+        ); /* Elegant dark blue gradient */
+        color: white;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 2.5em;
+      }
+
+      nav {
+        background: #1e2a47; /* Slightly lighter blue */
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        flex-wrap: wrap;
+      }
+
+      nav a {
+        color: #f8c24d; /* Gold for an elegant contrast */
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 1em;
+      }
+
+      nav a:hover {
+        text-decoration: underline;
+        color: #ffffff; /* White text on hover for better contrast */
+      }
+
+      nav .dropdown {
+        position: relative;
+      }
+
+      nav .dropdown-menu {
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+      }
+
+      nav .dropdown-menu a {
+        color: #283593; /* Dark blue for dropdown links */
+        padding: 10px 20px;
+        display: block;
+        text-decoration: none;
+      }
+
+      nav .dropdown-menu a:hover {
+        background-color: #f4f4f9;
+      }
+
+      nav .dropdown:hover .dropdown-menu {
+        display: block;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background: #333333; /* Dark grey for the content container */
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .container h2 {
+        color: #f8c24d; /* Gold for section headers */
+        border-bottom: 2px solid#f8c24d;
+        padding-bottom: 5px;
+      }
+
+      .container p {
+        line-height: 1.6;
+        margin: 10px 0;
+      }
+
+      .task-list {
+        margin: 20px 0;
+      }
+
+      .task-list h4 {
+        color: #f8c24d; /* Gold for task headings */
+        margin-top: 20px;
+      }
+
+      .task-list p {
+        margin: 10px 0;
+      }
+
+      footer {
+        background-color: #1e2a47; /* Deep blue background for footer */
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 20px;
+      }
+
+      footer p {
+        margin: 0;
+        font-size: 0.9em;
+      }
+
+      select {
+        width: 100%;
+        padding: 10px;
+        margin: 20px 0;
+        font-size: 1em;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      @media (max-width: 600px) {
+        nav a {
+          margin: 0 10px;
+          font-size: 0.9em;
+        }
+
+        header h1 {
+          font-size: 2em;
+        }
+
+        .container {
+          padding: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Games</h1>
+      <p>Dokumentasi dan Penjelasan Games Favorit saya</p>
+    </header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="TENTANG_SAYA.html">About Me</a>
+      <div class="dropdown">
+        <a href="#">My Service ▼</a>
+        <div class="dropdown-menu">
+          <a href="FREELANCE.html">Fiver</a>
+          <a href="FREELANCE_2.html">Lynk</a>
+          <a href="YOUTUBE.html">YouTube</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#">My Favorite ▼</a>
+        <div class="dropdown-menu">
+          <a href="ANIME.html">Anime</a>
+          <a href="MANGA.html">Manga</a>
+          <a href="GAMES.html">Games</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#">My Coding Task ▼</a>
+        <div class="dropdown-menu">
+          <a href="C++.html">C++</a>
+          <a href="CSS.html">CSS</a>
+          <a href="C_SHARP.html">C#</a>
+          <a href="PYTHON.html">Python</a>
+          <a href="HTML.html">Html</a>
+          <a href="PHP.html">PHP</a>
+          <a href="JAVA.html">Java</a>
+          <a href="JAVASCRIPT.html">Javascript</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h2>Selamat Datang di Dokumentasi dan penjelasan favorit Games saya</h2>
+      <p>Berikut adalah beberapa favorit Games saya</p>
+      <select id="taskDropdown" onchange="showTaskDetails()">
+        <option value="">Pilih Games untuk melihat detail</option>
+        <option value="task1">Red Dead Redemption 2</option>
+        <option value="task2">Fifa</option>
+        <option value="task3">Pes</option>
+        <option value="task4">Minecraft</option>
+        <option value="task5">Tokusatsu</option>
+        <option value="task6">Naruto</option>
+        <option value="task7">DragonBall</option>
+        <option value="task8">One Piece</option>
+        <option value="task9">Bleach</option>
+      </select>
+
+      <div class="task-list" id="taskDetails">
+        <!-- Details will be dynamically inserted here -->
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Rizky Delfa Ramadhani. All rights reserved.</p>
+    </footer>
+
+    <script>
+      function showTaskDetails() {
+        const taskDetails = document.getElementById("taskDetails");
+        const selectedTask = document.getElementById("taskDropdown").value;
+
+        const tasks = {
+          task1: `
+          `,
+          task2: `
+          `,
+          task3: `
+          `,
+          task4: `
+          `,
+          task5: `
+          `,
+        };
+
+        taskDetails.innerHTML = tasks[selectedTask] || "";
+      }
+    </script>
+  </body>
+</html>
