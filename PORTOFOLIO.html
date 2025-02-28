@@ -1,24 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id-ID">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PHP Tasks</title>
+    <title>Portfolio - Creative Career Blog</title>
     <style>
       body {
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #f0f0f0; /* Light grey background */
+        background-color: #f4f4f9;
         color: #333;
       }
 
       header {
-        background: linear-gradient(
-          135deg,
-          #8e44ad,
-          #2c3e50
-        ); /* Purple and dark grey */
+        background: linear-gradient(135deg, #f1c40f, #e67e22);
         color: white;
         padding: 20px;
         text-align: center;
@@ -31,7 +27,7 @@
       }
 
       nav {
-        background: #8e44ad; /* Purple */
+        background: #e67e22;
         display: flex;
         justify-content: center;
         padding: 10px;
@@ -65,7 +61,7 @@
       }
 
       nav .dropdown-menu a {
-        color: #8e44ad;
+        color: #e67e22;
         padding: 10px 20px;
         display: block;
         text-decoration: none;
@@ -89,26 +85,24 @@
       }
 
       .container h2 {
-        color: #8e44ad; /* Purple */
-        border-bottom: 2px solid #8e44ad;
+        color: #e67e22;
+        border-bottom: 2px solid #e67e22;
         padding-bottom: 5px;
       }
 
-      .container p {
-        line-height: 1.6;
-        margin: 10px 0;
+      .portfolio-item {
+        margin-bottom: 20px;
+        padding: 10px;
+        background: #f9f9f9;
+        border-left: 5px solid #e67e22;
       }
 
       footer {
         background-color: #333;
         color: white;
         text-align: center;
-        padding: 10px 0;
+        padding: 20px 10px;
         margin-top: 20px;
-      }
-
-      footer p {
-        margin: 0;
         font-size: 0.9em;
       }
 
@@ -117,24 +111,12 @@
           margin: 0 10px;
           font-size: 0.9em;
         }
-
-        header h1 {
-          font-size: 2em;
-        }
-
-        .container {
-          padding: 15px;
-        }
-
-        p {
-          text-align: justify;
-        }
       }
     </style>
   </head>
   <body>
     <header>
-      <h1>PHP Tasks</h1>
+      <h1>Portfolio</h1>
     </header>
     <nav>
       <a href="index.html">Home</a>
@@ -169,62 +151,51 @@
           <a href="JAVASCRIPT.html">Javascript</a>
         </div>
       </div>
-      <div class="dropdown">
-        <a href="#">PHP ▼</a>
-        <div class="dropdown-menu">
-          <a href="#">Tugas PHP</a>
-        </div>
-      </div>
     </nav>
     <div class="container">
-      <h2>Welcome to PHP Tasks</h2>
-      <p style="text-align: justify">
-        Selamat datang di halaman tugas PHP. Di sini, Anda dapat menemukan
-        berbagai macam tugas yang berhubungan dengan bahasa pemrograman PHP. PHP
-        adalah bahasa pemrograman server-side yang sering digunakan untuk
-        pengembangan web dinamis dan aplikasi berbasis server.
-      </p>
-      <p style="text-align: justify">
-        Pada halaman ini, Anda dapat mengakses tugas-tugas yang dibagi ke dalam
-        kategori tertentu:
-      </p>
-      <ul>
-        <li style="text-align: justify">
-          <strong>Tugas Individu dan Kelompok:</strong> Tugas-tugas ini mencakup
-          kumpulan pekerjaan yang telah diselesaikan secara mandiri maupun
-          bersama tim. Tugas individu dirancang untuk mengasah kemampuan dasar
-          Anda dalam PHP, seperti pengolahan form, penggunaan database, dan
-          pengaturan session.
-        </li>
-
-        <li style="text-align: justify">
-          <strong>Tugas Individu:</strong> Kumpulan tugas yang dapat dikerjakan
-          secara mandiri untuk mengasah kemampuan pemrograman PHP Anda. Tugas
-          ini berfokus pada penerapan konsep dasar PHP seperti pengolahan form,
-          penggunaan database MySQL, dan pemrograman OOP.
-        </li>
-        <li style="text-align: justify">
-          <strong>Tugas Kelompok:</strong> Tugas yang dilakukan dalam kelompok,
-          biasanya berfokus pada pembuatan aplikasi web yang lebih besar,
-          seperti sistem manajemen konten (CMS), aplikasi toko online, atau
-          aplikasi berbasis PHP lainnya.
-        </li>
-        <li style="text-align: justify">
-          <strong>Semua Tugas:</strong> Jika Anda ingin melihat semua tugas yang
-          telah diselesaikan, baik tugas individu maupun tugas kelompok, Anda
-          dapat memilih kategori ini untuk menelusuri dan memahami berbagai
-          proyek yang telah dikerjakan.
-        </li>
-      </ul>
-      <p style="text-align: justify">
-        Pilih kategori tugas yang Anda inginkan dari menu di atas untuk memulai
-        dan tingkatkan kemampuan PHP Anda. Jika Anda ingin belajar lebih lanjut
-        tentang dasar-dasar PHP, Anda juga dapat mengakses materi pembelajaran
-        atau tutorial yang tersedia di halaman lain.
-      </p>
+      <h2>Portofolio Saya</h2>
+      <div class="portfolio-item">
+        <h3>Proyek 1: Website Personal</h3>
+        <p>
+          Website ini dirancang untuk menampilkan informasi pribadi, layanan
+          yang saya tawarkan, serta berbagai karya saya. Website ini memiliki
+          desain yang responsif dan mudah dinavigasi, memungkinkan pengunjung
+          untuk mengenal lebih jauh tentang latar belakang saya, pengalaman
+          kerja, serta proyek yang telah saya selesaikan.
+        </p>
+      </div>
+      <div class="portfolio-item">
+        <h3>Proyek 2: Aplikasi C++ Kalkulator</h3>
+        <p>
+          Proyek ini merupakan aplikasi kalkulator lanjutan yang mendukung
+          berbagai operasi matematika seperti penjumlahan, pengurangan,
+          perkalian, pembagian, perhitungan trigonometri, serta konversi
+          pecahan. Aplikasi ini dikembangkan menggunakan bahasa pemrograman C++
+          dengan struktur kode yang modular dan mudah diperluas.
+        </p>
+      </div>
+      <div class="portfolio-item">
+        <h3>Proyek 3: Desain Ilustrasi Anime</h3>
+        <p>
+          Saya telah membuat berbagai desain ilustrasi karakter anime dengan
+          gaya yang unik dan sesuai permintaan klien. Proyek ini mencakup
+          pembuatan karakter original, fanart, serta ilustrasi untuk keperluan
+          komersial seperti merchandise dan branding.
+        </p>
+      </div>
     </div>
     <footer>
       <p>&copy; 2025 Creative Career Blog. All Rights Reserved.</p>
+      <p>
+        Terima kasih telah mengunjungi portofolio saya. Saya berkomitmen untuk
+        terus berkembang dan menciptakan karya-karya terbaik dalam dunia
+        pengembangan web, desain, dan pemrograman. Jangan ragu untuk menghubungi
+        saya jika Anda memiliki proyek menarik yang bisa kita kerjakan bersama!
+      </p>
+      <p>
+        Ikuti saya di media sosial untuk update terbaru tentang proyek,
+        tutorial, dan wawasan kreatif lainnya.
+      </p>
     </footer>
   </body>
 </html>
