@@ -197,33 +197,131 @@
       <h2>Komponen yang Dibutuhkan</h2>
       <ul>
         <li style="text-align: justify">
-          <strong>Arduino UNO :</strong> Arduino adalah sebuah platform
-          elektronik open-source yang terdiri dari hardware (papan
-          mikrokontroler) dan software (Arduino IDE). Arduino digunakan untuk
-          membuat proyek elektronik berbasis mikrokontroler yang dapat diprogram
-          dengan bahasa pemrograman C/C++.
+          <strong>Arduino UNO :</strong><br />
+          Arduino adalah sebuah platform elektronik open-source yang terdiri
+          dari hardware (papan mikrokontroler) dan software (Arduino IDE).
+          Arduino digunakan untuk membuat proyek elektronik berbasis
+          mikrokontroler yang dapat diprogram dengan bahasa pemrograman C/C++.
         </li>
+        <br />
         <li style="text-align: justify">
-          <strong>Relay 5V :</strong> Komponen ini digunakan untuk mengendalikan perangkat listrik dengan sinyal dari mikrokontroler. Dalam konteks pemrograman C++, penggunaannya berkaitan dengan penerapan konsep dasar seperti pengolahan data dan pemrograman berbasis objek.
+          <strong>Relay 5V :</strong><br />
+          Komponen ini digunakan untuk mengendalikan perangkat listrik dengan
+          sinyal dari mikrokontroler. Dalam konteks pemrograman C++,
+          penggunaannya berkaitan dengan penerapan konsep dasar seperti
+          pengolahan data dan pemrograman berbasis objek.
         </li>
+        <br />
         <li style="text-align: justify">
-          <strong>Bread Board :</strong> Media untuk merakit rangkaian elektronik tanpa perlu menyolder, memungkinkan percobaan dan pengembangan aplikasi berbasis mikrokontroler dengan lebih fleksibel.
+          <strong>Bread Board :</strong><br />
+          Media untuk merakit rangkaian elektronik tanpa perlu menyolder,
+          memungkinkan percobaan dan pengembangan aplikasi berbasis
+          mikrokontroler dengan lebih fleksibel.
         </li>
+        <br />
         <li style="text-align: justify">
-          <strong>Kabel Jumper :</strong> Digunakan untuk menghubungkan berbagai komponen elektronik pada breadboard atau antara perangkat yang berbeda, mendukung fleksibilitas dalam eksperimen dan pengembangan proyek.
-          <li style="text-align: justify">
-          <strong>LED atau Bolam :</strong> Komponen dasar yang sering digunakan dalam proyek elektronik sebagai indikator atau bagian dari sistem output. Dalam pemrograman, penggunaannya sering dikaitkan dengan konsep dasar kontrol digital dan manipulasi sinyal dalam C++.
+          <strong>Kabel Jumper :</strong><br />
+          Digunakan untuk menghubungkan berbagai komponen elektronik pada
+          breadboard atau antara perangkat yang berbeda, mendukung fleksibilitas
+          dalam eksperimen dan pengembangan proyek. Terdapat dua jenis kabel
+          jumper yang umum digunakan, yaitu male to male (untuk menghubungkan
+          pin ke pin) dan male to female (untuk menghubungkan pin ke soket atau
+          header).
         </li>
-         <li style="text-align: justify">
-          <strong>Sound Voice Detection :</strong> Modul yang memungkinkan sistem mengenali suara sebagai input. Implementasinya dalam pemrograman melibatkan pengolahan sinyal dan algoritma deteksi suara menggunakan fitur bahasa C++.
+        <br />
+        <li style="text-align: justify">
+          <strong>LED atau Bolam :</strong><br />
+          Komponen dasar yang sering digunakan dalam proyek elektronik sebagai
+          indikator atau bagian dari sistem output. Dalam pemrograman,
+          penggunaannya sering dikaitkan dengan konsep dasar kontrol digital dan
+          manipulasi sinyal dalam C++.
         </li>
+        <br />
+        <li style="text-align: justify">
+          <strong>Sound Voice Detection :</strong><br />
+          Modul yang memungkinkan sistem mengenali suara sebagai input.
+          Implementasinya dalam pemrograman melibatkan pengolahan sinyal dan
+          algoritma deteksi suara menggunakan fitur bahasa C++.
         </li>
       </ul>
+      <h2>Code yang saya gunakan</h2>
       <p style="text-align: justify">
-        Pilih kategori tugas yang Anda inginkan dari menu di atas untuk memulai
-        dan tingkatkan kemampuan C++ Anda. Jika Anda ingin belajar lebih lanjut
-        tentang dasar-dasar C++, Anda juga dapat mengakses materi pembelajaran
-        atau tutorial yang tersedia di halaman lain.
+        Berikut adalah kode Arduino untuk proyek Lampu Belajar Otomatis berbasis
+        sensor suara. Kode ini memungkinkan lampu menyala atau mati berdasarkan
+        input dari sensor suara.
+      </p>
+
+      <pre><code>
+boolean lampON = false;
+int inSensor = A0;
+int lamp = 9;
+
+void setup() {
+  pinMode(inSensor, INPUT);
+  pinMode(lamp, OUTPUT);
+  digitalWrite(lamp, LOW);
+}
+
+void loop() {
+  if (digitalRead(inSensor) == 0) {
+    if (lampON == false) {
+      digitalWrite(lamp, HIGH);
+      lampON = true;
+      delay(100);
+    } else {
+      digitalWrite(lamp, LOW);
+      lampON = false;
+      delay(100);
+    }
+  }
+}
+</code></pre>
+      <h2>Langkah-langkah Pembuatan</h2>
+      <ol style="text-align: justify">
+        <li>Siapkan bahan-bahan yang diperlukan.</li>
+        <li>Pasangkan kabel jumper tiap-tiap modulnya.</li>
+        <li>Hubungkan 5V Arduino Uno ke Project Board.</li>
+        <li>
+          Hubungkan 5V pada Relay ke Project Board yang sudah terhubung dengan
+          5V Arduino Uno.
+        </li>
+        <li>Hubungkan Ground pada Relay ke Ground Arduino Uno.</li>
+        <li>Sambungkan Input pada Relay ke Pin 9 Arduino Uno.</li>
+        <li>Hubungkan A0 pada modul sensor suara ke A0 di Arduino Uno.</li>
+        <li>Hubungkan Ground pada Modul Sensor Suara ke Ground Arduino Uno.</li>
+        <li>
+          Hubungkan positif pada Modul Sensor Suara ke positif yang telah
+          dipasang pada Project Board.
+        </li>
+        <li>
+          Hubungkan kabel pada lampu yang telah dipotong salah satu jalurnya ke
+          Modul Relay (di tengah dan di samping kanan).
+        </li>
+        <li>Setelah semuanya terpasang, lanjutkan ke pemrograman.</li>
+        <li>Gunakan USB Arduino untuk menghubungkan Laptop ke Arduino Uno.</li>
+        <li>
+          Buka aplikasi Arduino, tulis programnya, pilih board Arduino Uno, dan
+          pastikan portnya terhubung.
+        </li>
+        <li>Jika semuanya sudah siap, lakukan upload program.</li>
+        <li>
+          Setelah pemrograman berhasil, lakukan uji coba dengan menancapkan
+          kabel ke stop kontak.
+        </li>
+        <li>
+          Jika berhasil, lampu akan menyala atau mati saat mendeteksi suara
+          tepukan.
+        </li>
+      </ol>
+
+      <p style="text-align: justify">
+        Pilih kategori tugas yang sesuai untuk memulai dan eksplorasi lebih jauh
+        dunia C++! Jika Anda tertarik untuk memahami lebih dalam tentang cara
+        kerja Lampu Belajar Otomatis dengan Sensor Suara, mari jelajahi
+        langkah-langkahnya. Dengan proyek ini, Anda akan belajar bagaimana
+        menghubungkan sensor suara dengan Arduino untuk mengontrol lampu secara
+        otomatis. Tingkatkan pemahaman Anda tentang pemrograman dan elektronika
+        dengan mencoba tantangan ini!
       </p>
     </div>
     <footer>
