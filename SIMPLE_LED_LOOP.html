@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>C++ Tasks</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      header {
+        background: linear-gradient(135deg, #0e55da, #19d7ec);
+        color: white;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 2.5em;
+      }
+
+      nav {
+        background: #00a2ff;
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        flex-wrap: wrap;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 1em;
+      }
+
+      nav a:hover {
+        text-decoration: underline;
+      }
+
+      nav .dropdown {
+        position: relative;
+      }
+
+      nav .dropdown-menu {
+        display: none;
+        position: absolute;
+        background-color: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+      }
+
+      nav .dropdown-menu a {
+        color: #2575fc;
+        padding: 10px 20px;
+        display: block;
+        text-decoration: none;
+      }
+
+      nav .dropdown-menu a:hover {
+        background-color: #f4f4f9;
+      }
+
+      nav .dropdown:hover .dropdown-menu {
+        display: block;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .container h2 {
+        color: #1ca3d9;
+        border-bottom: 2px solid #2589fc;
+        padding-bottom: 5px;
+      }
+
+      .container p {
+        line-height: 1.6;
+        margin: 10px 0;
+      }
+
+      footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 20px;
+      }
+
+      footer p {
+        margin: 0;
+        font-size: 0.9em;
+      }
+
+      @media (max-width: 600px) {
+        nav a {
+          margin: 0 10px;
+          font-size: 0.9em;
+        }
+
+        header h1 {
+          font-size: 2em;
+        }
+
+        .container {
+          padding: 15px;
+        }
+
+        p {
+          text-align: justify;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Arduino - Low Aktif</h1>
+    </header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="TENTANG_SAYA.html">About Me</a>
+      <a href="PORTOFOLIO.html">Portfolio</a>
+      <div class="dropdown">
+        <a href="#">My Service ▼</a>
+        <div class="dropdown-menu">
+          <a href="FREELANCE.html">Fiver</a>
+          <a href="FREELANCE_2.html">Lynk</a>
+          <a href="YOUTUBE.html">YouTube</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#">My Favorite ▼</a>
+        <div class="dropdown-menu">
+          <a href="ANIME.html">Anime</a>
+          <a href="MANGA.html">Manga</a>
+          <a href="GAMES.html">Games</a>
+          <a href="MOVIES.html">Movies</a>
+          <a href="MUSIC.html">Music</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#">My Coding Task ▼</a>
+        <div class="dropdown-menu">
+          <a href="C++.html">C++</a>
+          <a href="CSS.html">CSS</a>
+          <a href="C_SHARP.html">C#</a>
+          <a href="PYTHON.html">Python</a>
+          <a href="HTML.html">Html</a>
+          <a href="PHP.html">PHP</a>
+          <a href="JAVA.html">Java</a>
+          <a href="JAVASCRIPT.html">Javascript</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#">C++ ▼</a>
+        <div class="dropdown-menu">
+          <a href="TUGAS_INDI_KELOM.html">Tugas Individu & Kelompok</a>
+          <a href="TUGAS_INDIVIDU.html">Penjelasan T.Individu</a>
+          <a href="TUGAS_KELOMPOK.html">Penjelasan T.Kelompok</a>
+          <a href="SEMUA_TUGAS.html">Semua Tugas</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#">Arduino ▼</a>
+        <div class="dropdown-menu">
+          <a href="LAMPU_BELAJAR_OTOMATIS.html">Lampu Belajar Otomatis</a>
+          <a href="SIMPLE_LED_LOOP.html">Simple LED Loop</a>
+          <a href="SIMPLE_LED_ON_OFF.html">Simple LED On-Off</a>
+          <a href="HIGHT_AKTIF.html">High Aktif</a>
+          <a href="LOW_AKTIF.html">Low Aktif</a>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <h2>Deskripsi Proyek</h2>
+      <p style="text-align: justify">
+        Proyek ini bertujuan untuk mengontrol nyala dan mati LED menggunakan
+        Arduino dengan metode LOW aktif. LOW aktif berarti LED akan menyala
+        ketika diberikan sinyal LOW (logika 0) dari pin digital Arduino dan mati
+        ketika diberikan sinyal HIGH (logika 1).
+      </p>
+      <h2>Komponen yang Digunakan</h2>
+      <ul>
+        <li style="text-align: justify">
+          <strong>Arduino UNO :</strong><br />
+          Arduino adalah sebuah platform elektronik open-source yang terdiri
+          dari hardware (papan mikrokontroler) dan software (Arduino IDE).
+          Arduino digunakan untuk membuat proyek elektronik berbasis
+          mikrokontroler yang dapat diprogram dengan bahasa pemrograman C/C++.
+        </li>
+        <br />
+        <li style="text-align: justify">
+          <strong>Kabel Jumper :</strong><br />
+          Digunakan untuk menghubungkan pin pada Arduino dengan LED dan resistor
+          di breadboard.
+        </li>
+        <br />
+        <li style="text-align: justify">
+          <strong>LED :</strong><br />
+          Komponen elektronik yang memancarkan cahaya saat diberikan tegangan
+          listrik. LED digunakan sebagai indikator visual dalam proyek ini untuk
+          menunjukkan perubahan status logika keluaran dari Arduino.
+        </li>
+        <br />
+        <li style="text-align: justify">
+          <strong>Resistor :</strong><br />
+          Komponen yang digunakan untuk membatasi arus listrik yang mengalir ke
+          LED agar tidak berlebihan dan mencegah kerusakan pada LED. Nilai
+          resistor yang umum digunakan untuk LED adalah 220Ω hingga 1kΩ.
+        </li>
+      </ul>
+      <h2>Code yang Digunakan</h2>
+      <p>Berikut adalah kode Arduino yang efisien untuk proyek ini:</p>
+
+      <pre><code>
+void setup() {
+  // Inisialisasi pin sebagai OUTPUT
+  for (int i = 0; i <= 3; i++) {
+    pinMode(i, OUTPUT);
+  }
+}
+
+void loop() {
+  // Nyalakan semua LED (LOW karena LOW-AKTIF)
+  for (int i = 0; i <= 3; i++) {
+    digitalWrite(i, LOW);
+  }
+  delay(1000);
+
+  // Matikan semua LED (HIGH karena LOW-AKTIF)
+  for (int i = 0; i <= 3; i++) {
+    digitalWrite(i, HIGH);
+  }
+  delay(1000);
+}
+
+</code></pre>
+      <h2>Code yang Digunakan</h2>
+      <p>Berikut adalah kode Arduino yang kurang efisien untuk proyek ini:</p>
+      <pre><code>
+void setup() {
+  // put your setup code here, to run once:
+pinMode ( 7, OUTPUT);
+pinMode ( 6, OUTPUT);
+pinMode ( 5, OUTPUT);
+pinMode ( 4, OUTPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+int nilai_delay = 200;
+digitalWrite ( 7, LOW ) ; 
+delay (nilai_delay);
+digitalWrite ( 6, LOW ) ; 
+delay (nilai_delay);
+digitalWrite ( 5, LOW ) ; 
+delay (nilai_delay);
+digitalWrite ( 4, LOW ) ; 
+delay (nilai_delay);
+
+digitalWrite ( 7, HIGH ) ; 
+delay (nilai_delay);
+digitalWrite ( 6, HIGH ) ; 
+delay (nilai_delay);
+digitalWrite ( 5, HIGH ) ; 
+delay (nilai_delay);
+digitalWrite ( 4, HIGH ) ; 
+delay (nilai_delay);
+
+}
+
+</code></pre>
+      <h2>Kesimpulan</h2>
+      <p style="text-align: justify">
+        Dengan metode LOW aktif, LED menyala ketika diberikan sinyal LOW dan
+        mati ketika diberikan sinyal HIGH. Ini berguna dalam sistem yang
+        membutuhkan konsumsi daya rendah atau pengendalian dari perangkat
+        tertentu.
+      </p>
+      <h2>Simulasi Proyek di Wokwi</h2>
+      <p>
+        Untuk melihat simulasi High aktif yang efisien, kamu bisa mengunjungi
+        link berikut:
+      </p>
+      <p>
+        <a
+          href="https://wokwi.com/projects/372108483775864833"
+          target="_blank"
+          style="color: #1ca3d9; text-decoration: underline; font-weight: bold"
+          >Klik di sini untuk melihat simulasi di Wokwi</a
+        >
+      </p>
+      <p>
+        Untuk melihat simulasi High aktif yang kurang efisien menurut saya, kamu
+        bisa mengunjungi link berikut:
+      </p>
+      <p>
+        <a
+          href="https://wokwi.com/projects/424360444138617857"
+          target="_blank"
+          style="color: #1ca3d9; text-decoration: underline; font-weight: bold"
+          >Klik di sini untuk melihat simulasi di Wokwi</a
+        >
+      </p>
+    </div>
+    <footer>
+      <p>&copy; 2025 Creative Career Blog. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>
