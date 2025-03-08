@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id-ID">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>C# Tasks</title>
+    <title>Penjualan Akun Roblox - Creative Career Blog</title>
     <style>
+      /* Gaya Umum */
       body {
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #f4f7f6; /* Light grey background */
+        background-color: #f9f9f9;
         color: #333;
         animation: fadeIn 1s ease-in-out;
       }
@@ -23,12 +24,9 @@
         }
       }
 
+      /* Header */
       header {
-        background: linear-gradient(
-          135deg,
-          #4e73df,
-          #1f3a5a
-        ); /* Blue gradient */
+        background: linear-gradient(135deg, #ff6f61, #ffcc5c);
         color: white;
         padding: 20px;
         text-align: center;
@@ -51,8 +49,9 @@
         animation: fadeIn 1.5s ease-in-out;
       }
 
+      /* Navbar */
       nav {
-        background: #4e73df; /* Blue */
+        background: #ff6f61;
         display: flex;
         justify-content: center;
         padding: 10px;
@@ -70,7 +69,7 @@
 
       nav a:hover {
         text-decoration: underline;
-        color: #ffffff;
+        color: #ffcc5c;
         transform: translateY(-3px);
       }
 
@@ -91,7 +90,7 @@
       }
 
       nav .dropdown-menu a {
-        color: #4e73df;
+        color: #ff6f61;
         padding: 10px 20px;
         display: block;
         text-decoration: none;
@@ -106,6 +105,7 @@
         display: block;
       }
 
+      /* Container Utama */
       .container {
         max-width: 800px;
         margin: 20px auto;
@@ -128,8 +128,8 @@
       }
 
       .container h2 {
-        color: #4e73df; /* C# blue */
-        border-bottom: 2px solid #4e73df;
+        color: #ff6f61;
+        border-bottom: 2px solid #ff6f61;
         padding-bottom: 5px;
         animation: fadeIn 1s ease-in-out;
       }
@@ -140,6 +140,78 @@
         animation: fadeIn 1.5s ease-in-out;
       }
 
+      /* Daftar Akun */
+      .account-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .account-item {
+        background-color: #f4f4f9;
+        border-radius: 8px;
+        padding: 15px;
+        width: calc(50% - 10px);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .account-item:hover {
+        transform: translateY(-5px);
+      }
+
+      .account-item img {
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 10px;
+      }
+
+      .account-item h3 {
+        color: #ff6f61;
+        margin: 0 0 10px;
+      }
+
+      .account-item p {
+        margin: 5px 0;
+      }
+
+      .account-item .price {
+        font-weight: bold;
+        color: #ff6f61;
+      }
+
+      /* Tombol WhatsApp dan Facebook */
+      .contact-buttons {
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .contact-buttons a {
+        display: inline-block;
+        padding: 10px 20px;
+        border-radius: 5px;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+
+      .contact-buttons a:hover {
+        transform: translateY(-3px);
+        opacity: 0.9;
+      }
+
+      .contact-buttons .whatsapp {
+        background-color: #25d366; /* Warna WhatsApp */
+      }
+
+      .contact-buttons .facebook {
+        background-color: #1877f2; /* Warna Facebook */
+      }
+
+      /* Footer */
       footer {
         background-color: #333;
         color: white;
@@ -154,6 +226,7 @@
         font-size: 0.9em;
       }
 
+      /* Responsif */
       @media (max-width: 600px) {
         nav a {
           margin: 0 10px;
@@ -168,15 +241,24 @@
           padding: 15px;
         }
 
-        p {
-          text-align: justify;
+        .account-item {
+          width: 100%;
+        }
+
+        .contact-buttons {
+          flex-direction: column;
+        }
+
+        .contact-buttons a {
+          width: 100%;
+          text-align: center;
         }
       }
     </style>
   </head>
   <body>
     <header>
-      <h1>C# Tasks</h1>
+      <h1>Penjualan Akun Roblox</h1>
     </header>
     <nav>
       <a href="index.html">Home</a>
@@ -214,58 +296,64 @@
           <a href="JAVASCRIPT.html">Javascript</a>
         </div>
       </div>
-      <div class="dropdown">
-        <a href="#">C# ▼</a>
-        <div class="dropdown-menu">
-          <a href="#">Tugas C#</a>
-        </div>
-      </div>
     </nav>
     <div class="container">
-      <h2>Welcome to C# Tasks</h2>
+      <h2>Daftar Akun Roblox yang Dijual</h2>
       <p style="text-align: justify">
-        Selamat datang di halaman tugas C#. Di sini, Anda dapat menemukan
-        berbagai macam tugas yang berhubungan dengan bahasa pemrograman C# yang
-        sering digunakan dalam pengembangan aplikasi desktop, web, dan game.
+        Berikut adalah daftar akun Roblox yang sedang dijual. Semua akun
+        memiliki datpol (data polos) dan tidak menggunakan topi (notopi).
+        Pembayaran dapat dilakukan melalui Gopay dengan harga Rp. 15.000,00 per
+        akun.
       </p>
-      <p style="text-align: justify">
-        Pada halaman ini, Anda dapat mengakses tugas-tugas yang dibagi ke dalam
-        kategori tertentu:
-      </p>
-      <ul>
-        <li style="text-align: justify">
-          <strong>Tugas Individu dan Kelompok:</strong> Tugas-tugas ini mencakup
-          kumpulan pekerjaan yang telah diselesaikan secara mandiri maupun
-          bersama tim. Tugas individu dirancang untuk mengasah kemampuan dasar
-          Anda dalam C#, seperti pengolahan form, penggunaan objek, dan
-          pemrograman berbasis event.
-        </li>
+      <!-- Tombol WhatsApp dan Facebook -->
+      <div class="contact-buttons">
+        <a href="https://wa.me/6288227789219" class="whatsapp" target="_blank"
+          >Hubungi via WhatsApp</a
+        >
+        <a
+          href="https://www.facebook.com/profile.php?id=61566375546468"
+          class="facebook"
+          target="_blank"
+          >Hubungi via Facebook</a
+        >
+      </div>
+      <div class="account-list">
+        <!-- Akun 1 -->
+        <div class="account-item">
+          <img src="Yukimiya.png" alt="Akun 1 - Style Yukimiya" />
+          <h3>AKUN 1</h3>
+          <p><strong>Style:</strong> Yukimiya</p>
+          <p><strong>Status:</strong> Datpol, Notopi, Siap MC</p>
+          <p class="price">Harga: Rp. 15.000,00</p>
+        </div>
 
-        <li style="text-align: justify">
-          <strong>Tugas Individu:</strong> Kumpulan tugas yang dapat dikerjakan
-          secara mandiri untuk mengasah kemampuan pemrograman C# Anda. Tugas ini
-          berfokus pada penerapan konsep dasar C# seperti pengolahan data,
-          pengolahan objek, dan struktur data.
-        </li>
-        <li style="text-align: justify">
-          <strong>Tugas Kelompok:</strong> Tugas yang dilakukan dalam kelompok,
-          biasanya berfokus pada pembuatan aplikasi menggunakan C#, seperti
-          aplikasi berbasis Windows, pengembangan game, atau aplikasi berbasis
-          web.
-        </li>
-        <li style="text-align: justify">
-          <strong>Semua Tugas:</strong> Jika Anda ingin melihat semua tugas yang
-          telah diselesaikan, baik tugas individu maupun tugas kelompok, Anda
-          dapat memilih kategori ini untuk menelusuri dan memahami berbagai
-          proyek yang telah dikerjakan.
-        </li>
-      </ul>
-      <p style="text-align: justify">
-        Pilih kategori tugas yang Anda inginkan dari menu di atas untuk memulai
-        dan tingkatkan kemampuan C# Anda. Jika Anda ingin belajar lebih lanjut
-        tentang dasar-dasar C#, Anda juga dapat mengakses materi pembelajaran
-        atau tutorial yang tersedia di halaman lain.
-      </p>
+        <!-- Akun 2 -->
+        <div class="account-item">
+          <img src="Don Lorenzo.png" alt="Akun 2 - Style Don Lorenzo" />
+          <h3>AKUN 2</h3>
+          <p><strong>Style:</strong> Don Lorenzo</p>
+          <p><strong>Status:</strong> Datpol, Notopi, Siap MC</p>
+          <p class="price">Harga: Rp. 15.000,00</p>
+        </div>
+
+        <!-- Akun 3 -->
+        <div class="account-item">
+          <img src="Don Lorenzo02.png" alt="Akun 3 - Style Don Lorenzo" />
+          <h3>AKUN 3</h3>
+          <p><strong>Style:</strong> Don Lorenzo</p>
+          <p><strong>Status:</strong> Datpol, Notopi, Siap MC</p>
+          <p class="price">Harga: Rp. 15.000,00</p>
+        </div>
+
+        <!-- Akun 4 -->
+        <div class="account-item">
+          <img src="Reo.png" alt="Akun 4 - Style Reo" />
+          <h3>AKUN 4</h3>
+          <p><strong>Style:</strong> Reo</p>
+          <p><strong>Status:</strong> Datpol, Notopi, Siap MC</p>
+          <p class="price">Harga: Rp. 15.000,00</p>
+        </div>
+      </div>
     </div>
     <footer>
       <p>&copy; 2025 Creative Career Blog. All Rights Reserved.</p>
