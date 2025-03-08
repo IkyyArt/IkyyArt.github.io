@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="id-ID">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kuis IT Semester 1-2</title>
+    <style>
+      /* Global Styles */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f9;
+        color: #333;
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* Header */
+      header {
+        background: linear-gradient(135deg, #f1c40f, #e67e22);
+        color: white;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        animation: slideDown 0.5s ease-out;
+      }
+
+      @keyframes slideDown {
+        from {
+          transform: translateY(-100%);
+        }
+        to {
+          transform: translateY(0);
+        }
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 2.5em;
+        animation: fadeIn 1.5s ease-in-out;
+      }
+
+      /* Navigation Bar */
+      nav {
+        background: #e67e22;
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        flex-wrap: wrap;
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 1em;
+        transition: color 0.3s ease, transform 0.3s ease;
+      }
+
+      nav a:hover {
+        color: #f1c40f;
+        transform: translateY(-3px);
+      }
+
+      nav .dropdown {
+        position: relative;
+      }
+
+      nav .dropdown-menu {
+        display: none;
+        position: absolute;
+        background-color: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+        animation: fadeIn 0.3s ease-in-out;
+      }
+
+      nav .dropdown-menu a {
+        color: #e67e22;
+        padding: 10px 20px;
+        display: block;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+      }
+
+      nav .dropdown-menu a:hover {
+        background-color: #f4f4f9;
+      }
+
+      nav .dropdown:hover .dropdown-menu {
+        display: block;
+      }
+
+      /* Quiz Container */
+      .quiz-container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        animation: slideUp 0.5s ease-out;
+      }
+
+      @keyframes slideUp {
+        from {
+          transform: translateY(20px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .quiz-container h2 {
+        color: #e67e22;
+        border-bottom: 2px solid #e67e22;
+        padding-bottom: 5px;
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      /* Question Styles */
+      .question {
+        margin-bottom: 20px;
+        padding: 15px;
+        background: #f9f9f9;
+        border-left: 5px solid #e67e22;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.5s ease-in-out forwards;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .question:hover {
+        transform: scale(1.02);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .question h3 {
+        margin-top: 0;
+        color: #333;
+      }
+
+      .options {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .options label {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        padding: 10px;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        transition: background 0.3s ease, transform 0.3s ease;
+      }
+
+      .options label:hover {
+        background: #f1c40f;
+        color: white;
+        transform: translateX(5px);
+      }
+
+      .options input {
+        margin-right: 10px;
+      }
+
+      /* Highlight Jawaban Benar */
+      .correct {
+        background-color: #2ecc71 !important;
+        color: white !important;
+      }
+
+      /* Highlight Jawaban Salah */
+      .incorrect {
+        background-color: #e74c3c !important;
+        color: white !important;
+      }
+
+      /* Button Styles */
+      button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #e67e22;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 1em;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #d35400;
+        transform: translateY(-3px);
+      }
+
+      /* Result Styles */
+      .result {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 1.2em;
+        color: #e67e22;
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      /* Celebration Styles */
+      .celebration {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 1.5em;
+        color: #e67e22;
+        animation: celebrate 2s ease-in-out infinite;
+      }
+
+      @keyframes celebrate {
+        0% {
+          transform: scale(1);
+          color: #e67e22;
+        }
+        50% {
+          transform: scale(1.2);
+          color: #f1c40f;
+        }
+        100% {
+          transform: scale(1);
+          color: #e67e22;
+        }
+      }
+
+      /* Sad Effect Styles */
+      .sad-effect {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 1.5em;
+        color: #e74c3c;
+        animation: sad 2s ease-in-out infinite;
+      }
+
+      @keyframes sad {
+        0% {
+          transform: scale(1);
+          color: #e74c3c;
+        }
+        50% {
+          transform: scale(1.1);
+          color: #c0392b;
+        }
+        100% {
+          transform: scale(1);
+          color: #e74c3c;
+        }
+      }
+
+      /* Footer */
+      footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 20px;
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      footer p {
+        margin: 0;
+        font-size: 0.9em;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 600px) {
+        header h1 {
+          font-size: 2em;
+        }
+
+        .quiz-container {
+          padding: 15px;
+        }
+
+        .question {
+          padding: 10px;
+        }
+      }
+    </style>
+    <!-- Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Simple Quiz App</h1>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="TENTANG_SAYA.html">About Me</a>
+      <a href="PORTOFOLIO.html">Portfolio</a>
+      <div class="dropdown">
+        <a href="#">My Service ▼</a>
+        <div class="dropdown-menu">
+          <a href="FREELANCE.html">Fiver</a>
+          <a href="FREELANCE_2.html">Lynk</a>
+          <a href="YOUTUBE.html">YouTube</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#">My Favorite ▼</a>
+        <div class="dropdown-menu">
+          <a href="ANIME.html">Anime</a>
+          <a href="MANGA.html">Manga</a>
+          <a href="GAMES.html">Games</a>
+          <a href="MOVIES.html">Movies</a>
+          <a href="MUSIC.html">Music</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#">My Coding Task ▼</a>
+        <div class="dropdown-menu">
+          <a href="C++.html">C++</a>
+          <a href="CSS.html">CSS</a>
+          <a href="C_SHARP.html">C#</a>
+          <a href="PYTHON.html">Python</a>
+          <a href="HTML.html">Html</a>
+          <a href="PHP.html">PHP</a>
+          <a href="JAVA.html">Java</a>
+          <a href="JAVASCRIPT.html">Javascript</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Quiz Container -->
+    <div class="quiz-container">
+      <h2>Pertanyaan Dasar IT</h2>
+      <div id="quiz">
+        <!-- Questions will be dynamically inserted here -->
+      </div>
+      <button id="submit">Submit Jawaban</button>
+      <button id="retry" style="display: none; margin-top: 10px">
+        Coba Lagi
+      </button>
+      <div class="result" id="result"></div>
+      <div class="celebration" id="celebration" style="display: none">
+        🎉 Selamat! Semua jawaban benar! 🎉
+      </div>
+      <div class="sad-effect" id="sad-effect" style="display: none">
+        😢 Yah, ada yang salah. Coba lagi ya!
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Creative Career Blog. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+      // Quiz Data
+      const quizData = [
+        {
+          question:
+            "Apa bahasa pemrograman yang digunakan untuk membuat website?",
+          options: ["Python", "Java", "HTML", "C++"],
+          answer: "HTML",
+        },
+        {
+          question: "Apa kepanjangan dari SQL?",
+          options: [
+            "Structured Query Language",
+            "Simple Query Language",
+            "Standard Query Language",
+            "System Query Language",
+          ],
+          answer: "Structured Query Language",
+        },
+        {
+          question: "Apa fungsi dari RAM dalam komputer?",
+          options: [
+            "Menyimpan data secara permanen",
+            "Memproses data sementara",
+            "Menjalankan sistem operasi",
+            "Mengontrol perangkat keras",
+          ],
+          answer: "Memproses data sementara",
+        },
+        {
+          question: "Apa protokol yang digunakan untuk mengirim email?",
+          options: ["HTTP", "FTP", "SMTP", "TCP"],
+          answer: "SMTP",
+        },
+        {
+          question: "Apa nama sistem operasi open-source yang populer?",
+          options: ["Windows", "macOS", "Linux", "iOS"],
+          answer: "Linux",
+        },
+        {
+          question: "Apa fungsi dari firewall dalam jaringan komputer?",
+          options: [
+            "Mempercepat koneksi internet",
+            "Melindungi jaringan dari serangan luar",
+            "Mengirim data antar komputer",
+            "Mengelola basis data",
+          ],
+          answer: "Melindungi jaringan dari serangan luar",
+        },
+        {
+          question:
+            "Apa bahasa pemrograman yang digunakan untuk analisis data?",
+          options: ["Python", "Java", "C#", "Ruby"],
+          answer: "Python",
+        },
+        {
+          question: "Apa kepanjangan dari HTTP?",
+          options: [
+            "HyperText Transfer Protocol",
+            "High Transfer Text Protocol",
+            "Hyper Transfer Text Protocol",
+            "HighText Transfer Protocol",
+          ],
+          answer: "HyperText Transfer Protocol",
+        },
+        {
+          question: "Apa nama database management system (DBMS) yang populer?",
+          options: ["MySQL", "MongoDB", "PostgreSQL", "Semua benar"],
+          answer: "Semua benar",
+        },
+        {
+          question: "Apa fungsi dari DNS dalam jaringan komputer?",
+          options: [
+            "Mengubah nama domain menjadi alamat IP",
+            "Mengirim email",
+            "Mengelola basis data",
+            "Mengontrol perangkat keras",
+          ],
+          answer: "Mengubah nama domain menjadi alamat IP",
+        },
+      ];
+
+      // Quiz Logic
+      const quizContainer = document.getElementById("quiz");
+      const resultContainer = document.getElementById("result");
+      const celebrationContainer = document.getElementById("celebration");
+      const sadEffectContainer = document.getElementById("sad-effect");
+      const submitButton = document.getElementById("submit");
+      const retryButton = document.getElementById("retry");
+
+      function buildQuiz() {
+        quizData.forEach((q, index) => {
+          const questionDiv = document.createElement("div");
+          questionDiv.classList.add("question");
+          questionDiv.innerHTML = `
+            <h3>${index + 1}. ${q.question}</h3>
+            <div class="options">
+              ${q.options
+                .map(
+                  (option) => `
+                <label>
+                  <input type="radio" name="question${index}" value="${option}">
+                  ${option}
+                </label>
+              `
+                )
+                .join("")}
+            </div>
+          `;
+          quizContainer.appendChild(questionDiv);
+        });
+      }
+
+      function showResults() {
+        const answerContainers = quizContainer.querySelectorAll(".options");
+        let score = 0;
+
+        quizData.forEach((q, index) => {
+          const selectedInput = `input[name="question${index}"]:checked`;
+          const userAnswer = (
+            answerContainers[index].querySelector(selectedInput) || {}
+          ).value;
+
+          // Highlight jawaban yang benar
+          const correctAnswer = q.answer;
+          const labels = answerContainers[index].querySelectorAll("label");
+          labels.forEach((label) => {
+            if (label.textContent.trim() === correctAnswer) {
+              label.classList.add("correct");
+            }
+          });
+
+          // Highlight jawaban yang salah (jika ada)
+          if (userAnswer && userAnswer !== correctAnswer) {
+            const selectedLabel = answerContainers[index].querySelector(
+              `input[value="${userAnswer}"]`
+            ).parentElement;
+            selectedLabel.classList.add("incorrect");
+          }
+
+          if (userAnswer === correctAnswer) {
+            score++;
+          }
+        });
+
+        // Menghitung persentase jawaban benar
+        const percentage = (score / quizData.length) * 100;
+
+        // Menentukan nilai huruf berdasarkan persentase
+        let grade;
+        if (percentage >= 90) {
+          grade = "A";
+        } else if (percentage >= 80) {
+          grade = "B";
+        } else if (percentage >= 70) {
+          grade = "C";
+        } else if (percentage >= 60) {
+          grade = "D";
+        } else {
+          grade = "E";
+        }
+
+        // Tampilkan hasil
+        resultContainer.innerHTML = `Skor Anda: ${score} dari ${
+          quizData.length
+        } (${percentage.toFixed(2)}%) - Nilai: ${grade}`;
+
+        // Jika semua jawaban benar
+        if (score === quizData.length) {
+          celebrationContainer.style.display = "block";
+          sadEffectContainer.style.display = "none";
+          confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 },
+          });
+        } else {
+          celebrationContainer.style.display = "none";
+          sadEffectContainer.style.display = "block";
+        }
+
+        // Nonaktifkan semua input radio setelah submit
+        const inputs = quizContainer.querySelectorAll("input[type='radio']");
+        inputs.forEach((input) => {
+          input.disabled = true;
+        });
+
+        // Sembunyikan tombol "Submit" dan tampilkan tombol "Coba Lagi"
+        submitButton.style.display = "none";
+        retryButton.style.display = "block";
+      }
+
+      function resetQuiz() {
+        // Reset semua pilihan jawaban
+        const inputs = quizContainer.querySelectorAll("input[type='radio']");
+        inputs.forEach((input) => {
+          input.checked = false;
+          input.disabled = false; // Aktifkan kembali input radio
+        });
+
+        // Hapus highlight jawaban
+        const labels = quizContainer.querySelectorAll("label");
+        labels.forEach((label) => {
+          label.classList.remove("correct", "incorrect");
+        });
+
+        // Sembunyikan hasil, pesan selamat, dan efek sedih
+        resultContainer.innerHTML = "";
+        celebrationContainer.style.display = "none";
+        sadEffectContainer.style.display = "none";
+
+        // Tampilkan tombol "Submit" dan sembunyikan tombol "Coba Lagi"
+        submitButton.style.display = "block";
+        retryButton.style.display = "none";
+      }
+
+      // Build Quiz
+      buildQuiz();
+
+      // Event Listener
+      submitButton.addEventListener("click", showResults);
+      retryButton.addEventListener("click", resetQuiz);
+    </script>
+  </body>
+</html>
