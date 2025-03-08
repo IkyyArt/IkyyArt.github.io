@@ -3,35 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio - Creative Career Blog</title>
+    <title>Creative Career Blog</title>
     <style>
-      .portfolio-item {
-        margin-bottom: 20px;
-        padding: 10px;
-        background: #f9f9f9;
-        border-left: 5px solid #e67e22;
-        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        opacity: 0;
-        transform: translateY(20px);
-        animation: fadeInUp 0.5s ease-in-out forwards;
-      }
-
-      .portfolio-item:hover {
-        transform: scale(1.05);
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-      }
-
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
+      /* Gaya Umum */
       body {
         font-family: Arial, sans-serif;
         margin: 0;
@@ -50,6 +24,7 @@
         }
       }
 
+      /* Header */
       header {
         background: linear-gradient(135deg, #f1c40f, #e67e22);
         color: white;
@@ -74,6 +49,7 @@
         animation: fadeIn 1.5s ease-in-out;
       }
 
+      /* Navbar */
       nav {
         background: #e67e22;
         display: flex;
@@ -92,8 +68,7 @@
       }
 
       nav a:hover {
-        text-decoration: underline;
-        color: #ffffff;
+        color: #f1c40f;
         transform: translateY(-3px);
       }
 
@@ -129,6 +104,7 @@
         display: block;
       }
 
+      /* Container Utama */
       .container {
         max-width: 800px;
         margin: 20px auto;
@@ -157,32 +133,62 @@
         animation: fadeIn 1s ease-in-out;
       }
 
-      .portfolio-item {
-        margin-bottom: 20px;
-        padding: 10px;
-        background: #f9f9f9;
-        border-left: 5px solid #e67e22;
+      .container p {
+        line-height: 1.6;
+        margin: 10px 0;
+        animation: fadeIn 1.5s ease-in-out;
       }
 
+      /* Game Container */
+      .game-container {
+        text-align: center;
+        margin: 20px 0;
+      }
+
+      .game-container img {
+        width: 100%;
+        max-width: 600px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Tombol Download */
+      .download-button {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #e67e22;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      .download-button:hover {
+        background-color: #f1c40f;
+        transform: translateY(-3px);
+      }
+
+      /* Footer */
       footer {
         background-color: #333;
         color: white;
         text-align: center;
-        padding: 20px 10px;
+        padding: 10px 0;
         margin-top: 20px;
-        font-size: 0.9em;
         animation: fadeIn 1s ease-in-out;
       }
 
-      @media (max-width: 600px) {
-        nav {
-          flex-direction: column;
-          align-items: center;
-        }
+      footer p {
+        margin: 0;
+        font-size: 0.9em;
+      }
 
+      /* Responsif */
+      @media (max-width: 600px) {
         nav a {
-          display: block;
-          margin: 5px 0;
+          margin: 0 10px;
+          font-size: 0.9em;
         }
 
         header h1 {
@@ -193,15 +199,15 @@
           padding: 15px;
         }
 
-        p {
-          text-align: justify;
+        .game-container img {
+          height: auto;
         }
       }
     </style>
   </head>
   <body>
     <header>
-      <h1>Portfolio</h1>
+      <h1>Simple Game - Runner Game</h1>
     </header>
     <nav>
       <a href="index.html">Home</a>
@@ -240,69 +246,27 @@
       </div>
     </nav>
     <div class="container">
-      <h2>Portofolio Saya</h2>
-      <div class="portfolio-item">
-        <h3>Proyek 1: Simple Kalkulator</h3>
-        <a
-          href="PROYEK_CALC.html"
-          style="color: #e67e22; text-decoration: none; font-weight: bold"
-        >
-          Lihat Kalkulator
-        </a>
-        <p style="text-align: justify">
-          Kalkulator ini mendukung berbagai operasi matematika sederhana...
-        </p>
+      <h2>Selamat Datang di Halaman Game Saya</h2>
+      <p style="text-align: justify">
+        Ini adalah game Unity yang saya buat. Anda bisa memainkannya langsung di
+        browser atau mendownloadnya untuk dimainkan secara offline.
+      </p>
+      <div class="game-container">
+        <!-- Tempatkan gambar game di sini -->
+        <img src="RunnerGame.png" alt="Game" />
+        <br />
+        <a href="TUGAS AKHIR GAME.zip" class="download-button">Download Game</a>
       </div>
-      <div class="portfolio-item">
-        <h3>Proyek 2: Simple Quiz IT</h3>
-        <a
-          href="PROYEK_SIMPLE_QUIZ.html"
-          style="color: #e67e22; text-decoration: none; font-weight: bold"
-        >
-          Lihat Simple Quiz IT
-        </a>
-        <p style="text-align: justify">
-          Quiz ini berisi pertanyaan-pertanyaan sederhana tentang IT...
-        </p>
-      </div>
-      <div class="portfolio-item">
-        <h3>Proyek 3: Simple Games - Runner Games</h3>
-        <a
-          href="PROYEK_GAMES.html"
-          style="color: #e67e22; text-decoration: none; font-weight: bold"
-        >
-          Lihat Runner Games
-        </a>
-        <p style="text-align: justify">
-          Permainan ini adalah permainan klasik runner games dengan tema...</p>
-        </p>
-      </div>
-      <div class="portfolio-item">
-        <h3>Proyek 3: Website Personal</h3>
-        <p>
-          Website ini dibuat untuk memperkenalkan diri saya secara
-          profesional...
-        </p>
-      </div>
-      <div class="portfolio-item">
-        <h3>Proyek 4: Lampu Otomatis Sensor Suara</h3>
-        <p>proyek lampu belajar otomatis...</p>
-      </div>
-      <div class="portfolio-item">
-        <h3>Proyek 5: Desain Ilustrasi Anime</h3>
-        <p>Saya telah mengerjakan berbagai proyek desain karakter anime...</p>
-      </div>
-      <div class="portfolio-item">
-        <h3>Proyek 6: Buku Anak, Activity Book & Desain Amplop Lebaran</h3>
-        <p>
-          Buku anak-anak ini dibuat dalam format PDF dan bisa diedit di Canva...
-        </p>
-      </div>
+      <h3>Tentang Game Ini</h3>
+      <p style="text-align: justify">
+        Game ini adalah proyek pribadi saya yang dibuat menggunakan Unity.
+        Tujuan dari game ini adalah untuk memberikan pengalaman bermain yang
+        seru dan menghibur. Jika Anda memiliki saran atau masukan, jangan ragu
+        untuk menghubungi saya.
+      </p>
     </div>
     <footer>
       <p>&copy; 2025 Creative Career Blog. All Rights Reserved.</p>
-      <p>Terima kasih telah mengunjungi portofolio saya...</p>
     </footer>
-     
   </body>
 </html>
