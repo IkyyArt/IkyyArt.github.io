@@ -107,7 +107,7 @@
 
       /* Container Utama */
       .container {
-        max-width: 800px;
+        max-width: 1000px;
         margin: 20px auto;
         padding: 20px;
         background: white;
@@ -186,6 +186,7 @@
         display: flex;
         gap: 10px;
         margin-top: 20px;
+        flex-wrap: wrap;
       }
 
       .contact-buttons a {
@@ -211,6 +212,22 @@
         background-color: #1877f2; /* Warna Facebook */
       }
 
+      .contact-buttons .instagram {
+        background: linear-gradient(
+          45deg,
+          #405de6,
+          #5851db,
+          #833ab4,
+          #c13584,
+          #e1306c,
+          #fd1d1d
+        );
+      }
+
+      .contact-buttons .tiktok {
+        background: linear-gradient(45deg, #000000, #69c9d0);
+      }
+
       /* Footer */
       footer {
         background-color: #333;
@@ -224,6 +241,157 @@
       footer p {
         margin: 0;
         font-size: 0.9em;
+      }
+
+      /* Tab System */
+      .tab-container {
+        margin-top: 20px;
+      }
+
+      .tabs {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      .tab-btn {
+        padding: 10px 20px;
+        background-color: #f4f4f9;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: all 0.3s ease;
+      }
+
+      .tab-btn:hover {
+        background-color: #ffcc5c;
+        color: white;
+      }
+
+      .tab-btn.active {
+        background-color: #ff6f61;
+        color: white;
+      }
+
+      .tab-content {
+        display: none;
+        animation: fadeIn 0.5s ease-in-out;
+      }
+
+      .tab-content.active {
+        display: block;
+      }
+
+      /* Rarity Tabs */
+      .rarity-tabs {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin: 20px 0;
+      }
+
+      .rarity-btn {
+        padding: 8px 16px;
+        background-color: #f4f4f9;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: all 0.3s ease;
+      }
+
+      .rarity-btn:hover {
+        background-color: #ffcc5c;
+        color: white;
+      }
+
+      .rarity-btn.active {
+        background-color: #ff6f61;
+        color: white;
+      }
+
+      .rarity-content {
+        display: none;
+        animation: fadeIn 0.5s ease-in-out;
+      }
+
+      .rarity-content.active {
+        display: block;
+      }
+
+      .account-category {
+        margin-bottom: 30px;
+      }
+
+      .account-category h3 {
+        color: #ff6f61;
+        border-bottom: 1px solid #ffcc5c;
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+      }
+
+      /* Responsif untuk Mobile */
+      @media (max-width: 600px) {
+        /* Header */
+        header h1 {
+          font-size: 1.8em; /* Ukuran font lebih kecil */
+        }
+
+        /* Navbar */
+        nav {
+          flex-direction: column; /* Menu vertikal */
+          align-items: center;
+        }
+
+        nav a {
+          margin: 5px 0; /* Jarak antar menu */
+        }
+
+        /* Container */
+        .container {
+          padding: 10px; /* Padding lebih kecil */
+        }
+
+        /* Tombol Tab */
+        .tab-buttons {
+          flex-direction: column; /* Tombol vertikal */
+        }
+
+        .tab-buttons button {
+          width: 100%; /* Tombol memenuhi lebar layar */
+          margin: 5px 0; /* Jarak antar tombol */
+        }
+
+        /* Tombol Rarity */
+        .rarity-tabs {
+          flex-direction: column; /* Tombol vertikal */
+        }
+
+        .rarity-tabs button {
+          width: 100%; /* Tombol memenuhi lebar layar */
+          margin: 5px 0; /* Jarak antar tombol */
+        }
+
+        /* Daftar Akun */
+        .account-list {
+          flex-direction: column; /* Daftar akun vertikal */
+        }
+
+        .account-item {
+          width: 100%; /* Item memenuhi lebar layar */
+        }
+
+        /* Tombol WhatsApp, Facebook, Instagram, TikTok */
+        .contact-buttons {
+          flex-direction: column; /* Tombol vertikal */
+        }
+
+        .contact-buttons a {
+          width: 100%; /* Tombol memenuhi lebar layar */
+          margin: 5px 0; /* Jarak antar tombol */
+        }
       }
 
       /* Responsif */
@@ -252,6 +420,11 @@
         .contact-buttons a {
           width: 100%;
           text-align: center;
+        }
+
+        .tabs,
+        .rarity-tabs {
+          flex-direction: column;
         }
       }
     </style>
@@ -301,11 +474,11 @@
       <h2>Daftar Akun Roblox yang Dijual</h2>
       <p style="text-align: justify">
         Berikut adalah daftar akun Roblox yang sedang dijual. Semua akun
-        memiliki datpol (data polos) dan tidak menggunakan topi (notopi).
-        Pembayaran dapat dilakukan melalui Gopay dengan harga Rp. 15.000,00 per
-        akun.
+        memiliki datpol (data polos) dan tidak menggunakan topi (notopi). Pilih
+        kategori akun sesuai dengan kebutuhan Anda.
       </p>
-      <!-- Tombol WhatsApp dan Facebook -->
+
+      <!-- Tombol Kontak -->
       <div class="contact-buttons">
         <a href="https://wa.me/6288227789219" class="whatsapp" target="_blank"
           >Hubungi via WhatsApp</a
@@ -316,47 +489,348 @@
           target="_blank"
           >Hubungi via Facebook</a
         >
+        <a
+          href="https://www.instagram.com/yourusername"
+          class="instagram"
+          target="_blank"
+          >Hubungi via Instagram</a
+        >
+        <a
+          href="https://www.tiktok.com/@yourusername"
+          class="tiktok"
+          target="_blank"
+          >Hubungi via TikTok</a
+        >
       </div>
-      <div class="account-list">
-        <!-- Akun 1 -->
-        <div class="account-item">
-          <img src="Yukimiya.png" alt="Akun 1 - Style Yukimiya" />
-          <h3>AKUN 1</h3>
-          <p><strong>Style:</strong> Yukimiya</p>
-          <p><strong>Status:</strong> Datpol, Notopi, Siap MC</p>
-          <p class="price">Harga: Rp. 20.000,00</p>
+
+      <!-- Tab System -->
+      <div class="tab-container">
+        <div class="tabs">
+          <button class="tab-btn active" onclick="openTab(event, 'styleFlow')">
+            STYLE + FLOW
+          </button>
+          <button class="tab-btn" onclick="openTab(event, 'styleOnly')">
+            STYLE ONLY
+          </button>
+          <button class="tab-btn" onclick="openTab(event, 'flowOnly')">
+            FLOW ONLY
+          </button>
         </div>
 
-        <!-- Akun 2 -->
-        <div class="account-item">
-          <img src="Don Lorenzo.png" alt="Akun 2 - Style Don Lorenzo" />
-          <h3>AKUN 2</h3>
-          <p><strong>Style:</strong> Don Lorenzo</p>
-          <p><strong>Status:</strong> Datpol, Notopi, Siap MC</p>
-          <p class="price">Harga: Rp. 25.000,00</p>
+        <!-- Tab Content: STYLE + FLOW -->
+        <div id="styleFlow" class="tab-content active">
+          <div class="rarity-tabs">
+            <button
+              class="rarity-btn active"
+              onclick="openRarity(event, 'styleFlow-worldClass')"
+            >
+              World Class
+            </button>
+            <button
+              class="rarity-btn"
+              onclick="openRarity(event, 'styleFlow-mythic')"
+            >
+              Mythic
+            </button>
+            <button
+              class="rarity-btn"
+              onclick="openRarity(event, 'styleFlow-legendary')"
+            >
+              Legendary
+            </button>
+          </div>
+
+          <!-- World Class Content -->
+          <div id="styleFlow-worldClass" class="rarity-content active">
+            <div class="account-list">
+              <div class="account-item">
+                <img src="Don Lorenzo.png" alt="Don Lorenzo Style" />
+                <h3>Don Lorenzo + Crow</h3>
+                <p><strong>Style:</strong> Don Lorenzo</p>
+                <p><strong>Flow:</strong> Crow</p>
+                <p><strong>Status:</strong> Datpol, Notopi, Siap MC</p>
+                <p class="price">Harga: Rp. 25.000</p>
+              </div>
+
+              <div class="account-item">
+                <img src="WorldClass2.png" alt="World Class Style" />
+                <h3>World Class (TBA)</h3>
+                <p><strong>Style:</strong> ????</p>
+                <p><strong>Flow:</strong> ????</p>
+                <p><strong>Status:</strong> Datpol, Notopi, Siap MC</p>
+                <p class="price">Harga: Rp. 25.000</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mythic Content -->
+          <div id="styleFlow-mythic" class="rarity-content">
+            <div class="account-list">
+              <div class="account-item">
+                <img src="Yukimiya.png" alt="Yukimiya Style" />
+                <h3>Yukimiya</h3>
+                <p><strong>Style:</strong> Yukimiya</p>
+                <p><strong>Flow:</strong> ???</p>
+                <p><strong>Status:</strong> Datpol, Notopi, Siap MC</p>
+                <p class="price">Harga: Rp. 20.000</p>
+              </div>
+
+              <div class="account-item">
+                <img src="Mythic2.png" alt="Mythic Style" />
+                <h3>Mythic (TBA)</h3>
+                <p><strong>Style:</strong> ????</p>
+                <p><strong>Flow:</strong> ????</p>
+                <p><strong>Status:</strong> Datpol, Notopi, Siap MC</p>
+                <p class="price">Harga: Rp. 20.000</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Legendary Content -->
+          <div id="styleFlow-legendary" class="rarity-content">
+            <div class="account-list">
+              <div class="account-item">
+                <img src="Nagi.png" alt="Nagi Style" />
+                <h3>Nagi + Demon Wings</h3>
+                <p><strong>Style:</strong> Nagi</p>
+                <p><strong>Flow:</strong> Demon Wings</p>
+                <p><strong>Status:</strong> Datpol, Notopi, Siap MC</p>
+                <p class="price">Harga: Rp. 15.000</p>
+              </div>
+
+              <div class="account-item">
+                <img src="Legendary2.png" alt="Legendary Style" />
+                <h3>Legendary (TBA)</h3>
+                <p><strong>Style:</strong> ????</p>
+                <p><strong>Flow:</strong> ????</p>
+                <p><strong>Status:</strong> Datpol, Notopi, Siap MC</p>
+                <p class="price">Harga: Rp. 15.000</p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- Akun 3 -->
-        <div class="account-item">
-          <img src="Don Lorenzo02.png" alt="Akun 3 - Style Don Lorenzo" />
-          <h3>AKUN 3</h3>
-          <p><strong>Style:</strong> Don Lorenzo</p>
-          <p><strong>Status:</strong> Datpol, Notopi, Siap MC</p>
-          <p class="price">Harga: Rp. 25.000,00</p>
+        <!-- Tab Content: STYLE ONLY -->
+        <div id="styleOnly" class="tab-content">
+          <div class="rarity-tabs">
+            <button
+              class="rarity-btn active"
+              onclick="openRarity(event, 'styleOnly-worldClass')"
+            >
+              World Class
+            </button>
+            <button
+              class="rarity-btn"
+              onclick="openRarity(event, 'styleOnly-mythic')"
+            >
+              Mythic
+            </button>
+            <button
+              class="rarity-btn"
+              onclick="openRarity(event, 'styleOnly-legendary')"
+            >
+              Legendary
+            </button>
+          </div>
+
+          <!-- World Class Content -->
+          <div id="styleOnly-worldClass" class="rarity-content active">
+            <div class="account-list">
+              <div class="account-item">
+                <img src="Don Lorenzo.png" alt="Don Lorenzo Style" />
+                <h3>Don Lorenzo</h3>
+                <p><strong>Style:</strong> Don Lorenzo</p>
+                <p><strong>Status:</strong> Datpol, Notopi, Siap MC</p>
+                <p class="price">Harga: Rp. 20.000</p>
+              </div>
+
+              <div class="account-item">
+                <img src="WorldClassStyleOnly.png" alt="World Class Style" />
+                <h3>World Class (TBA)</h3>
+                <p><strong>Style:</strong> ???</p>
+                <p><strong>Status:</strong> Datpol, Notopi, Siap MC</p>
+                <p class="price">Harga: Rp. 20.000</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mythic Content -->
+          <div id="styleOnly-mythic" class="rarity-content">
+            <div class="account-list">
+              <div class="account-item">
+                <img src="MythicStyleOnly.png" alt="Mythic Style" />
+                <h3>Mythic (TBA)</h3>
+                <p><strong>Style:</strong> ????</p>
+                <p><strong>Status:</strong> Datpol, Notopi, Siap MC</p>
+                <p class="price">Harga: Rp. 15.000</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Legendary Content -->
+          <div id="styleOnly-legendary" class="rarity-content">
+            <div class="account-list">
+              <div class="account-item">
+                <img src="Karasu.png" alt="Karasu Style" />
+                <h3>Karasu</h3>
+                <p><strong>Style:</strong> Karasu</p>
+                <p><strong>Status:</strong> Datpol, Notopi, Siap MC</p>
+                <p class="price">Harga: Rp. 15.000</p>
+              </div>
+
+              <div class="account-item">
+                <img src="LegendaryStyleOnly.png" alt="Legendary Style" />
+                <h3>Legendary (TBA)</h3>
+                <p><strong>Style:</strong> ???</p>
+                <p><strong>Status:</strong> Datpol, Notopi, Siap MC</p>
+                <p class="price">Harga: Rp. 20.000</p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- Akun 4 -->
-        <div class="account-item">
-          <img src="Reo.png" alt="Akun 4 - Style Reo" />
-          <h3>AKUN 4</h3>
-          <p><strong>Style:</strong> Reo</p>
-          <p><strong>Status:</strong> Datpol, Notopi, Siap MC</p>
-          <p class="price">Harga: Rp. 15.000,00</p>
+        <!-- Tab Content: FLOW ONLY -->
+        <div id="flowOnly" class="tab-content">
+          <div class="rarity-tabs">
+            <button
+              class="rarity-btn active"
+              onclick="openRarity(event, 'flowOnly-worldClass')"
+            >
+              World Class
+            </button>
+            <button
+              class="rarity-btn"
+              onclick="openRarity(event, 'flowOnly-mythic')"
+            >
+              Mythic
+            </button>
+            <button
+              class="rarity-btn"
+              onclick="openRarity(event, 'flowOnly-legendary')"
+            >
+              Legendary
+            </button>
+          </div>
+
+          <!-- World Class Content -->
+          <div id="flowOnly-worldClass" class="rarity-content active">
+            <div class="account-list">
+              <div class="account-item">
+                <img src="WorldClassFlowOnly.png" alt="World Class Flow" />
+                <h3>World Class Flow</h3>
+                <p><strong>Flow:</strong> ???</p>
+                <p><strong>Status:</strong> Datpol, Notopi, Siap MC</p>
+                <p class="price">Harga: Rp. 15.000</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mythic Content -->
+          <div id="flowOnly-mythic" class="rarity-content">
+            <div class="account-list">
+              <div class="account-item">
+                <img src="MythicFlowOnly.png" alt="Mythic Flow" />
+                <h3>Mythic Flow</h3>
+                <p><strong>Flow:</strong> ???</p>
+                <p><strong>Status:</strong> Datpol, Notopi, Siap MC</p>
+                <p class="price">Harga: Rp. 10.000</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Legendary Content -->
+          <div id="flowOnly-legendary" class="rarity-content">
+            <div class="account-list">
+              <div class="account-item">
+                <img src="TrapFlow.png" alt="Trap Flow" />
+                <h3>Trap Flow</h3>
+                <p><strong>Flow:</strong> Trap</p>
+                <p><strong>Status:</strong> Datpol, Notopi, Siap MC</p>
+                <p class="price">Harga: Rp. 5.000</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
     <footer>
       <p>&copy; 2025 Creative Career Blog. All Rights Reserved.</p>
     </footer>
+
+    <script>
+      // Function to handle main tabs (STYLE+FLOW, STYLE ONLY, FLOW ONLY)
+      function openTab(evt, tabName) {
+        // Declare variables
+        var i, tabContent, tabBtns;
+
+        // Get all elements with class="tab-content" and hide them
+        tabContent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabContent.length; i++) {
+          tabContent[i].classList.remove("active");
+        }
+
+        // Get all elements with class="tab-btn" and remove the class "active"
+        tabBtns = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < tabBtns.length; i++) {
+          tabBtns[i].classList.remove("active");
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(tabName).classList.add("active");
+        evt.currentTarget.classList.add("active");
+
+        // Activate the first rarity tab of the selected main tab
+        if (tabName === "styleFlow") {
+          openRarity(evt, "styleFlow-worldClass", true);
+        } else if (tabName === "styleOnly") {
+          openRarity(evt, "styleOnly-worldClass", true);
+        } else if (tabName === "flowOnly") {
+          openRarity(evt, "flowOnly-worldClass", true);
+        }
+      }
+
+      // Function to handle rarity tabs (World Class, Mythic, Legendary)
+      function openRarity(evt, rarityName, skipButtonUpdate) {
+        // Declare variables
+        var i, rarityContent, rarityBtns;
+
+        // Get parent tab ID
+        var parentTabId = rarityName.split("-")[0];
+
+        // Get all elements with class="rarity-content" within the parent tab and hide them
+        rarityContent = document.querySelectorAll(
+          "#" + parentTabId + " .rarity-content"
+        );
+        for (i = 0; i < rarityContent.length; i++) {
+          rarityContent[i].classList.remove("active");
+        }
+
+        // If not skipping button update (used when switching main tabs)
+        if (!skipButtonUpdate) {
+          // Get all elements with class="rarity-btn" within the parent tab and remove the class "active"
+          rarityBtns = document.querySelectorAll(
+            "#" + parentTabId + " .rarity-btn"
+          );
+          for (i = 0; i < rarityBtns.length; i++) {
+            rarityBtns[i].classList.remove("active");
+          }
+
+          // Add "active" class to the clicked button
+          evt.currentTarget.classList.add("active");
+        } else {
+          // When switching main tabs, activate the first rarity button
+          rarityBtns = document.querySelectorAll(
+            "#" + parentTabId + " .rarity-btn"
+          );
+          if (rarityBtns.length > 0) {
+            rarityBtns[0].classList.add("active");
+          }
+        }
+
+        // Show the current rarity content
+        document.getElementById(rarityName).classList.add("active");
+      }
+    </script>
   </body>
 </html>
