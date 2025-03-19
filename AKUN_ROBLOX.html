@@ -7,11 +7,11 @@
     <style>
       /* Gaya Umum */
       body {
-        font-family: Arial, sans-serif;
+        font-family: "Poppins", Arial, sans-serif; /* Font modern */
         margin: 0;
         padding: 0;
-        background-color: #f9f9f9;
-        color: #333;
+        background-color: #f0f4f8; /* Warna latar belakang soft biru muda */
+        color: #333; /* Warna teks gelap */
         animation: fadeIn 1s ease-in-out;
       }
 
@@ -26,11 +26,15 @@
 
       /* Header */
       header {
-        background: linear-gradient(135deg, #ff6f61, #ffcc5c);
+        background: linear-gradient(
+          135deg,
+          #00b4db,
+          #0083b0
+        ); /* Gradien biru cerah */
         color: white;
         padding: 20px;
         text-align: center;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         animation: slideDown 0.5s ease-out;
       }
 
@@ -46,17 +50,19 @@
       header h1 {
         margin: 0;
         font-size: 2.5em;
+        font-weight: 600; /* Tebal untuk kesan modern */
         animation: fadeIn 1.5s ease-in-out;
       }
 
       /* Navbar */
       nav {
-        background: #ff6f61;
+        background: #00b4db; /* Warna biru cerah */
         display: flex;
         justify-content: center;
         padding: 10px;
         flex-wrap: wrap;
         animation: fadeIn 1s ease-in-out;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       }
 
       nav a {
@@ -64,12 +70,13 @@
         text-decoration: none;
         margin: 0 15px;
         font-size: 1em;
+        font-weight: 500; /* Sedikit tebal */
         transition: color 0.3s ease, transform 0.3s ease;
       }
 
       nav a:hover {
         text-decoration: underline;
-        color: #ffcc5c;
+        color: #ffcc5c; /* Warna kuning cerah saat hover */
         transform: translateY(-3px);
       }
 
@@ -82,7 +89,7 @@
         position: absolute;
         background-color: white;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        border-radius: 5px;
+        border-radius: 8px;
         top: 100%;
         left: 0;
         z-index: 1000;
@@ -90,7 +97,7 @@
       }
 
       nav .dropdown-menu a {
-        color: #ff6f61;
+        color: #00b4db; /* Warna biru cerah */
         padding: 10px 20px;
         display: block;
         text-decoration: none;
@@ -98,7 +105,7 @@
       }
 
       nav .dropdown-menu a:hover {
-        background-color: #f4f4f9;
+        background-color: #f0f4f8; /* Warna latar hover soft */
       }
 
       nav .dropdown:hover .dropdown-menu {
@@ -111,7 +118,7 @@
         margin: 20px auto;
         padding: 20px;
         background: white;
-        border-radius: 8px;
+        border-radius: 12px; /* Border radius lebih besar */
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         animation: slideUp 0.5s ease-out;
       }
@@ -128,8 +135,8 @@
       }
 
       .container h2 {
-        color: #ff6f61;
-        border-bottom: 2px solid #ff6f61;
+        color: #00b4db; /* Warna biru cerah */
+        border-bottom: 2px solid #00b4db; /* Warna biru cerah */
         padding-bottom: 5px;
         animation: fadeIn 1s ease-in-out;
       }
@@ -149,16 +156,17 @@
       }
 
       .account-item {
-        background-color: #f4f4f9;
-        border-radius: 8px;
+        background-color: white;
+        border-radius: 12px; /* Border radius lebih besar */
         padding: 15px;
         width: calc(50% - 10px);
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow lebih tegas */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
 
       .account-item:hover {
         transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Shadow lebih besar saat hover */
       }
 
       .account-item img {
@@ -168,7 +176,7 @@
       }
 
       .account-item h3 {
-        color: #ff6f61;
+        color: #00b4db; /* Warna biru cerah */
         margin: 0 0 10px;
       }
 
@@ -178,10 +186,10 @@
 
       .account-item .price {
         font-weight: bold;
-        color: #ff6f61;
+        color: #00b4db; /* Warna biru cerah */
       }
 
-      /* Tombol WhatsApp dan Facebook */
+      /* Tombol Kontak */
       .contact-buttons {
         display: flex;
         gap: 10px;
@@ -192,7 +200,7 @@
       .contact-buttons a {
         display: inline-block;
         padding: 10px 20px;
-        border-radius: 5px;
+        border-radius: 8px; /* Border radius lebih besar */
         color: white;
         text-decoration: none;
         font-weight: bold;
@@ -230,7 +238,7 @@
 
       /* Footer */
       footer {
-        background-color: #333;
+        background-color: #00b4db; /* Warna biru cerah */
         color: white;
         text-align: center;
         padding: 10px 0;
